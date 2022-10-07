@@ -7,7 +7,6 @@
 }
 .hero_left{
     width: 45%;
-    background-color: yellow
 }
 .hero_left span{
     font-size: 5rem;
@@ -18,4 +17,9 @@
 .hero_right{
     width: 45%;
     background-color: red;
+}
+
+.button_container{
+    height: auto;
+    width: auto;
 }
