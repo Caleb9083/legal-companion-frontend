@@ -1,0 +1,21 @@
+.hero_container{
+    width: 90%;
+    height: 500px;
+    margin-left: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.hero_left{
+    width: 45%;
+    background-color: yellow
+}
+.hero_left span{
+    font-size: 5rem;
+    display: block;
+    font-weight: bold;
+    color: #034078;
+}
+.hero_right{
+    width: 45%;
+    background-color: red;
+}

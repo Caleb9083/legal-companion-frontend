@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 3rem;
 }
 .navigation_logo {
   margin-left: 80px;
@@ -43,6 +44,7 @@
   display: block;
   width: 100%;
   color: #034078;
+  margin-right: 20px;
 }
 .hamburger {
   border: 0;
