@@ -1,0 +1,38 @@
+.features_container{
+    width: 90%;
+    height: 600px;
+    margin-left: 80px;
+}
+.features-top{
+    width: 100%;
+    height: 30%;
+}
+.features-middle{
+    display: flex;
+    width: 100%;
+    height: 30%;
+    justify-content: space-between;
+}
+.features-bottom{
+    width: 100%;
+    height: 30%;
+}
+.feature-item{
+    height: 100%;
+    width: 30%
+}
+
+.feature_span{
+    font-size: 2rem;
+    display: block;
+    color: #034078;
+    text-align: center;
+}
+
+.single{
+    margin: 0 auto;
+}
+.feature-img{
+    width: 30%;
+    height: 90%;
+}
