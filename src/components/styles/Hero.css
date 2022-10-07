@@ -4,9 +4,13 @@
     margin-left: 80px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 3rem;
 }
 .hero_left{
     width: 45%;
+}
+.span_elements{
+    margin-bottom: 7rem;
 }
 .hero_left span{
     font-size: 5rem;

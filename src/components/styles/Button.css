@@ -4,29 +4,33 @@
   
   .btn {
     padding: 8px 20px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
     cursor: pointer;
     transition: all 0.3s ease-out;
     background-color: var(--primary);
     color: #fff;
     padding: 8px 20px;
     border: 1px solid var(--primary);
+    justify-content:center;
+    align-items: center; 
+    display: flex;
   }
   .btn--small{
     padding: 4px 14px;
     font-size: 1rem;
+    border-radius: 5px;
   }
   
   .btn--medium {
     padding: 8px 20px;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    border-radius: 25px;
+    width: 80%;
   }
   
   .btn--large {
     padding: 12px 26px;
     font-size: 1.5rem;
+    border-radius: 5px;
   }
   
   .btn--large:hover,
