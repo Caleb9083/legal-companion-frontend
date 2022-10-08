@@ -1,22 +1,43 @@
 import React from "react";
 import "./styles/ConstitutionCard.css";
-import img from "./Images/ug.jpeg";
+import img from "../images/download.png";
 import { Link } from "react-router-dom";
+import { BiDotsVerticalRounded } from "react-icons/bi";
+import { Button } from "./Button";
 
 const ConstitutionCard = (props) => {
     const { constitutionId } = props;
     return (
         <>
-            <Link to={`/constitutions/${constitutionId}`}>
-                <div className="card">
-                    <img src={img} alt="Avatar" style={{ width: "100%" }} />
-                    <div className="card_container">
-                        <h4>
-                            <b>{props.title}</b>
-                        </h4>
+            <div className="card">
+                <img
+                    src={img}
+                    alt="Avatar"
+                    style={{ width: "100%", borderRadius: "25px 25px 0px 0px" }}
+                />
+                <div className="card_title_container">
+                    <div className="card_name">
+                        <Link className="card_name" to={`/constitutions/${constitutionId}`}>{props.title}</Link>
+                    </div>
+
+                    <div className="card_icon">
+                        <BiDotsVerticalRounded
+                            style={{ width: "30px", height: "30px", color: "#034078" }}
+                        />
+                        <div className="dropdown-content">
+                            <Link className="dropdown-content-item" to="#">
+                                Edit name and preamble
+                            </Link>
+                            <Link className="dropdown-content-item" to="#">
+                                Delete
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </Link>
+                <div className="card_open_container">
+                    <Button buttonSize="btn-small">Open</Button>
+                </div>
+            </div>
         </>
     );
 };
