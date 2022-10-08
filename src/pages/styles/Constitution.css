@@ -1,0 +1,52 @@
+.constitution{
+    width: 80%;
+    margin: 0 auto;
+}
+.constitution_hero_section{
+    height: 170px;
+    width: 100%;
+}
+.constituion_hero_text{
+    color: #034078;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.top{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.constitution_search{
+    height: 80px;
+    width: 100%;
+}
+.search_field_container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.search_input{
+    border-radius: 10px;
+    width: 40%;
+    height: 2.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    margin-right: 2rem;
+}
+.btn-search{
+    width: 50%;
+    font-size: 2rem;
+}
+.constitution_main{
+    width: 100%;
+    height: auto;
+}
+.constitution_main_head{
+    height: 40px;
+    width: 100%;
+    color:#034078;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+.constitution_main_body{
+    
+}
