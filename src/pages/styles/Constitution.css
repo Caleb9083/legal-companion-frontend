@@ -49,5 +49,19 @@
 }
 
 .constitution_main_body{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
 
+.constitution_upload{
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: right;
+}
+.constitution_bottom{
+    width: 70%;
+    margin: 5rem auto;
 }

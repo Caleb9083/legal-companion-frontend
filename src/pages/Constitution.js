@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Button } from "../components/Button";
 import "./styles/Constitution.css";
 import ConstitutionCard from "../components/ConstitutionCard";
+import { FaUpload } from 'react-icons/fa'
+import consti_img from '../images/consti.png'
 
 const Constitution = () => {
     const [searchValue, setSearchValue] = useState("");
@@ -59,6 +61,12 @@ const Constitution = () => {
                                 constitutionId={el._id}
                             />
                         ))}
+                </div>
+                <div className="constitution_upload">
+                    <Button buttonSize="btn-large"><FaUpload />Upload new document</Button>
+                </div>
+                <div className="constitution_bottom">
+                    <img src={consti_img} alt="consti_img" />
                 </div>
             </div>
         </div>
