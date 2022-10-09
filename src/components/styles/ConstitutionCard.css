@@ -23,7 +23,7 @@
   font-size: 1.5rem;
   margin: 10px 0px;
   text-decoration: none;
-  color: #034078
+  color: #034078;
 }
 .card_icon {
   position: relative;
@@ -52,5 +52,5 @@
 .card_open_container {
   width: 80%;
   display: flex;
-  justify-content:right;
+  justify-content: right;
 }

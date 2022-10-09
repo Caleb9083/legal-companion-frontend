@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./styles/ChaptersPage.css";
 import { useParams } from "react-router-dom";
 import ConstitutionCard from "../components/ConstitutionCard";
+import { Button } from "../components/Button";
+import { BsPlusLg } from "react-icons/bs";
 
 const ChaptersPage = () => {
     const [chapters, setChapters] = useState([]);
@@ -35,12 +37,25 @@ const ChaptersPage = () => {
     }, []);
 
     return (
-        <div className="constitution_area_containter">
+        <div className="chapters_containter">
             <div className="constitution_title">
-                <h1>{constitution && constitution.title}</h1>
+                {constitution && constitution.title}
             </div>
-            <div className="constitution_preamble">
-                {constitution && constitution.preamble}
+            <div className="constituion_img"></div>
+            <div className="constitution_sub_section_title">Preamble</div>
+            <div className="constitution_preamble_container">
+                <div className="constitution_preamble_body">
+                    {constitution && constitution.preamble}
+                </div>
+            </div>
+            <div className="constitution_sub_section_title ">
+                <div className="chapter_head">
+                    Chapters{" "}
+                    <Button buttonSize="btn-large">
+                        <BsPlusLg />
+                        Add new chapter
+                    </Button>
+                </div>
             </div>
             <div className="constitution_chapters">
                 {chapters &&
