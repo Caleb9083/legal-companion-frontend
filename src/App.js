@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import Constitution from './pages/Constitution';
+import ChaptersPage from './pages/ChaptersPage';
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/constitutions" element={<Constitution />} />
+            <Route
+              path="/constitutions/:constitutionId"
+              element={<ChaptersPage />}
+            />
           </Routes>
         </div>
       </BrowserRouter>
