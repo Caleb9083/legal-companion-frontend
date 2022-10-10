@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Footer from './components/Footer';
 import Constitution from './pages/Constitution';
 import ChaptersPage from './pages/ChaptersPage';
+import SectionsPage from './pages/SectionsPage';
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
             <Route
               path="/constitutions/:constitutionId"
               element={<ChaptersPage />}
+            />
+            <Route
+              path="/constitutions/:constitutionId/chapters/:chapterId"
+              element={<SectionsPage />}
             />
           </Routes>
         </div>
