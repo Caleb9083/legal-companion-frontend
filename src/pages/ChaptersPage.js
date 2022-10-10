@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./styles/ChaptersPage.css";
 import { useParams } from "react-router-dom";
-import ConstitutionCard from "../components/ConstitutionCard";
 import { Button } from "../components/Button";
 import { BsPlusLg } from "react-icons/bs";
+import ChapterCard from "../components/ChapterCard";
 
 const ChaptersPage = () => {
     const [chapters, setChapters] = useState([]);
@@ -37,7 +37,7 @@ const ChaptersPage = () => {
     }, []);
 
     return (
-        <div className="chapters_containter">
+        <div className="chapters_container">
             <div className="constitution_title">
                 {constitution && constitution.title}
             </div>
@@ -50,7 +50,7 @@ const ChaptersPage = () => {
             </div>
             <div className="constitution_sub_section_title ">
                 <div className="chapter_head">
-                    Chapters{" "}
+                    Chapters
                     <Button buttonSize="btn-large">
                         <BsPlusLg />
                         Add new chapter
@@ -61,7 +61,7 @@ const ChaptersPage = () => {
                 {chapters &&
                     chapters.map((chapter) => {
                         return (
-                            <ConstitutionCard
+                            <ChapterCard
                                 key={chapter._id}
                                 title={chapter.title}
                                 description={chapter.description}
@@ -71,7 +71,7 @@ const ChaptersPage = () => {
                         );
                     })}
             </div>
-            <div className="Constitution_ammendments"></div>
+            <div className="Constitution_ammendments">Hello</div>
         </div>
     );
 };

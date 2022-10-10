@@ -18,7 +18,7 @@
     margin: 0 auto;
 }
 .constitution_sub_section_title{
-    width: 100%;
+    width: 94%;
     padding: 20px 0px 20px 80px;
     font-size: 2rem;
     color:#034078;
@@ -35,5 +35,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%
+    width: 60%
+}
+
+.constitution_chapters{
+    width: 88%;
+    margin: 0 auto;
 }

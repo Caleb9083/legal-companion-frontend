@@ -1,0 +1,40 @@
+.constitution_chapter_container{
+    background-color: #034078;
+    height: 80px; 
+    width:65%;  
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.link{
+    width: 80%;
+
+}
+.constitution_chapter_name{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+
+}
+.constitution_chapter_icon{
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+}
+.constitution_chapter_title{
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+}
+.constitution_chapter_description{
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.link:visited{
+    text-decoration:none;
+    color: #fff
+    
+}
