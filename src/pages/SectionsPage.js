@@ -51,9 +51,13 @@ const SectionsPage = () => {
     return (
         <div>
             <div className="sections_container">
-                <div className="sections_chapter_title">{chapter && chapter.title}</div>
-                <div className="sections_constitution_title">
-                    {constitution && constitution.title}
+                <div className="sections_chapter_head">
+                    <div className="sections_chapter_title">
+                        {chapter && chapter.title}
+                    </div>
+                    <div className="sections_constitution_title">
+                        {constitution && constitution.title}
+                    </div>
                 </div>
                 <div className="sections_body">
                     {sections &&
@@ -69,7 +73,6 @@ const SectionsPage = () => {
                             );
                         })}
                 </div>
-
             </div>
             <Banner />
         </div>

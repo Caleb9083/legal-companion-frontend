@@ -35,7 +35,7 @@ const ConstitutionCard = (props) => {
                     </div>
                 </div>
                 <div className="card_open_container">
-                    <Button buttonSize="btn-small">Open</Button>
+                    <Button buttonSize="btn-small" route={`/constitutions/${constitutionId}`}>Open</Button>
                 </div>
             </div>
         </>

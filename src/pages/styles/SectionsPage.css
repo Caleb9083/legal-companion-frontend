@@ -1,13 +1,22 @@
-.sections_container{
-    width: 88%;
-    margin: 0 auto 7rem auto;
+.sections_container {
+  width: 100%;
+  margin: 0 auto 7rem auto;
 }
-.sections_chapter_title{
-    font-size: 2rem;
+.sections_chapter_head {
+  width: 88%;
+  margin: 0 auto;
 }
-.sections_constitution_title{
-    font-size: 1.5rem;
+.sections_chapter_title {
+  font-size: 2rem;
+  color: #034078;
+  margin-bottom: 1.5rem;
 }
-.sections_body{
-
+.sections_constitution_title {
+  font-size: 1.5rem;
+  color: #034078;
+  margin-bottom: 1rem;
+}
+.sections_body {
+  width: 100%;
+  
 }
