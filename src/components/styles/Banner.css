@@ -1,0 +1,16 @@
+.banner{
+    height: 100px;
+    width: 100%;
+    background-image: url(../../images/book-library-with-open-textbook-long.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.banner_text{
+    width: 88%;
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 auto;
+}

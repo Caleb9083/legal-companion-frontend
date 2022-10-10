@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Button } from "../components/Button";
 import { BsPlusLg } from "react-icons/bs";
 import ChapterCard from "../components/ChapterCard";
+import Banner from "../components/Banner";
 
 const ChaptersPage = () => {
     const [chapters, setChapters] = useState([]);
@@ -71,7 +72,7 @@ const ChaptersPage = () => {
                         );
                     })}
             </div>
-            <div className="Constitution_ammendments">Hello</div>
+            <Banner />
         </div>
     );
 };
