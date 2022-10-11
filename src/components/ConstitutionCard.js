@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/ConstitutionCard.css";
 import img from "../images/download.png";
 import { Link } from "react-router-dom";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import Button from "react-bootstrap/Button";
+import DeleteConstitutionModal from "./DeleteConstitutionModal";
 
 const ConstitutionCard = (props) => {
     const { constitutionId } = props;
+    const [delConModalOpen, setDelConModalOpen] = useState(false);
+
+    const handleShow = () => {
+        setDelConModalOpen(true);
+    };
+
+    const handleClose = () => {
+        setDelConModalOpen(false);
+        console.log("close clicked")
+    };
+
     return (
         <>
             <div className="card">
@@ -27,12 +39,19 @@ const ConstitutionCard = (props) => {
                             style={{ width: "30px", height: "30px", color: "#034078" }}
                         />
                         <div className="dropdown-content">
-                            <Link className="dropdown-content-item" to="#">
+                            <div className="dropdown-content-item">
                                 Edit name and preamble
-                            </Link>
-                            <Link className="dropdown-content-item" to="#">
+                            </div>
+                            <div className="dropdown-content-item" onClick={handleShow}>
+                                {delConModalOpen && (
+                                    <DeleteConstitutionModal
+                                        handleShow={handleShow}
+                                        handleClose={handleClose}
+                                        constitutionId={`${constitutionId}`}
+                                    />
+                                )}
                                 Delete
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -2,31 +2,33 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import React, { useState } from "react";
-import axios from "axios"
-
+import axios from "axios";
 
 function CustomModal({ handleClose, handleShow }) {
-    const url = "https://project-legal-companion.herokuapp.com/api/v2/constitutions/";
+    const url =
+        "https://project-legal-companion.herokuapp.com/api/v2/constitutions/";
     const [constitutionData, setConstitutionData] = useState({
         name: "",
-        preamble: ""
+        preamble: "",
     });
 
     const handleChange = (e) => {
-        const newConstitution = { ...constitutionData }
+        const newConstitution = { ...constitutionData };
         newConstitution[e.target.name] = e.target.value;
-        setConstitutionData(newConstitution)
-        console.log(constitutionData)
+        setConstitutionData(newConstitution);
+        console.log(constitutionData);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(url, {
-            title: constitutionData.name,
-            preamble: constitutionData.preamble
-        }).then(res => {
-            console.log(res.data)
-        })
+        axios
+            .post(url, {
+                title: constitutionData.name,
+                preamble: constitutionData.preamble,
+            })
+            .then((res) => {
+                console.log(res.data);
+            });
     };
 
     return (
