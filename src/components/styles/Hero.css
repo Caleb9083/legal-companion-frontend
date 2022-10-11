@@ -1,28 +1,29 @@
-.hero_container{
-    width: 90%;
-    height: 500px;
-    margin-left: 80px;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 7rem;
+.hero_container {
+  width: 90%;
+  height: 500px;
+  margin-left: 80px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7rem;
 }
-.hero_left{
-    width: 45%;
+.hero_left {
+  width: 45%;
 }
-.span_elements{
-    margin-bottom: 7rem;
+.span_elements {
+  margin-bottom: 7rem;
 }
-.hero_left span{
-    font-size: 4rem;
-    display: block;
-    font-weight: bold;
-    color: #034078;
+.hero_left span {
+  font-size: 4rem;
+  display: block;
+  font-weight: bold;
+  color: #034078;
 }
-.hero_right{
-    width: 45%;
+.hero_right {
+  width: 45%;
 }
 
-.button_container{
-    height: auto;
-    width: auto;
+.button_container {
+  height: auto;
+  width: auto;
 }
+

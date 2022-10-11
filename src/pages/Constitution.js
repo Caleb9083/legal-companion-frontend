@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "../components/Button";
+import Button from "react-bootstrap/Button";
 import "./styles/Constitution.css";
 import ConstitutionCard from "../components/ConstitutionCard";
 import { FaUpload } from 'react-icons/fa'

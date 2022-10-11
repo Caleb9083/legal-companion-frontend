@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles/ChaptersPage.css";
 import { useParams } from "react-router-dom";
-import { Button } from "../components/Button";
+import Button from "react-bootstrap/Button";
 import { BsPlusLg } from "react-icons/bs";
 import ChapterCard from "../components/ChapterCard";
 import Banner from "../components/Banner";
@@ -52,7 +52,7 @@ const ChaptersPage = () => {
             <div className="constitution_sub_section_title ">
                 <div className="chapter_head">
                     Chapters
-                    <Button buttonSize="btn-large">
+                    <Button >
                         <BsPlusLg />
                         Add new chapter
                     </Button>

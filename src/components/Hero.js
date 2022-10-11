@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/Hero.css";
-import { Button } from "./Button";
+import Button from "react-bootstrap/Button"
 import { AiFillEye } from 'react-icons/ai';
 import hero_right_img from "../images/high-angle-shot-gavel-lawsuit-papers-wooden-surface.jpg"
 
@@ -15,7 +15,7 @@ const Hero = () => {
                     <span>talk about?</span>
                 </div>
                 <div className="button_container">
-                    <Button buttonSize={"btn--medium"}><AiFillEye />View Constitutions</Button>
+                    <Button variant="primary"><AiFillEye />View Constitutions</Button>
                 </div>
             </div>
             <div className="hero_right">

@@ -3,7 +3,7 @@ import "./styles/ConstitutionCard.css";
 import img from "../images/download.png";
 import { Link } from "react-router-dom";
 import { BiDotsVerticalRounded } from "react-icons/bi";
-import { Button } from "./Button";
+import Button from "react-bootstrap/Button";
 
 const ConstitutionCard = (props) => {
     const { constitutionId } = props;
@@ -17,7 +17,9 @@ const ConstitutionCard = (props) => {
                 />
                 <div className="card_title_container">
                     <div className="card_name">
-                        <Link className="card_name" to={`/constitutions/${constitutionId}`}>{props.title}</Link>
+                        <Link className="card_name" to={`/constitutions/${constitutionId}`}>
+                            {props.title}
+                        </Link>
                     </div>
 
                     <div className="card_icon">
@@ -35,7 +37,9 @@ const ConstitutionCard = (props) => {
                     </div>
                 </div>
                 <div className="card_open_container">
-                    <Button buttonSize="btn-small" route={`/constitutions/${constitutionId}`}>Open</Button>
+                    <Link to={`/constitutions/${constitutionId}`}>
+                        <Button>Open</Button>
+                    </Link>
                 </div>
             </div>
         </>
