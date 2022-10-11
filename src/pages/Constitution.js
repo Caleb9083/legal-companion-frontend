@@ -4,10 +4,20 @@ import "./styles/Constitution.css";
 import ConstitutionCard from "../components/ConstitutionCard";
 import { FaUpload } from 'react-icons/fa'
 import consti_img from '../images/consti.png'
+import CustomModal from "../components/CustomModal";
 
 const Constitution = () => {
     const [searchValue, setSearchValue] = useState("");
     const [data, setData] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+    const handleShow = () => {
+        setIsModalOpen(true)
+    }
+
+    const handleClose = () => {
+        setIsModalOpen(false)
+    }
 
     useEffect(() => {
         fetch("https://project-legal-companion.herokuapp.com/api/v2/constitutions/")
@@ -63,7 +73,8 @@ const Constitution = () => {
                         ))}
                 </div>
                 <div className="constitution_upload">
-                    <Button buttonSize="btn-large"><FaUpload />Upload new document</Button>
+                    {isModalOpen && <CustomModal handleShow={handleShow} handleClose={handleClose} />}
+                    <Button onClick={handleShow}><FaUpload />Upload new document</Button>
                 </div>
                 <div className="constitution_bottom">
                     <img src={consti_img} alt="consti_img" />
