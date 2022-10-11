@@ -55,7 +55,7 @@ const Constitution = () => {
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
-                    <Button className="btn-search" buttonSize="btn-medium">
+                    <Button className="btn-search">
                         Search Document
                     </Button>
                 </form>
