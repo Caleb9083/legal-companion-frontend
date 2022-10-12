@@ -5,17 +5,29 @@ import { Link } from "react-router-dom";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import Button from "react-bootstrap/Button";
 import DeleteConstitutionModal from "./DeleteConstitutionModal";
+import UpdateConstitutionModal from "./UpdateConstitutionModal";
 
 const ConstitutionCard = (props) => {
     const { constitutionId } = props;
-    const [delConModalOpen, setDelConModalOpen] = useState(false);
 
-    const handleShow = () => {
-        setDelConModalOpen(true);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
+
+    const handleUpdateShow = () => {
+        setIsDeleteModalOpen(true);
     };
 
-    const handleClose = () => {
-        setDelConModalOpen(false);
+    const handleUpdateClose = () => {
+        setIsUpdateModalOpen(false);
+        console.log("close clicked")
+    };
+
+    const handleDeleteShow = () => {
+        setIsUpdateModalOpen(true);
+    };
+
+    const handleDeleteClose = () => {
+        setIsDeleteModalOpen(false);
         console.log("close clicked")
     };
 
@@ -39,19 +51,28 @@ const ConstitutionCard = (props) => {
                             style={{ width: "30px", height: "30px", color: "#034078" }}
                         />
                         <div className="dropdown-content">
-                            <div className="dropdown-content-item">
+                            <div className="dropdown-content-item" onClick={handleUpdateShow}>
                                 Edit name and preamble
                             </div>
-                            <div className="dropdown-content-item" onClick={handleShow}>
-                                {delConModalOpen && (
-                                    <DeleteConstitutionModal
-                                        handleShow={handleShow}
-                                        handleClose={handleClose}
-                                        constitutionId={`${constitutionId}`}
-                                    />
-                                )}
+                            <div className="dropdown-content-item" onClick={handleDeleteShow}>
                                 Delete
                             </div>
+                            {isUpdateModalOpen && (
+                                <UpdateConstitutionModal
+                                    handleShow={handleUpdateShow}
+                                    handleClose={handleUpdateClose}
+                                    constitutionId={`${constitutionId}`}
+                                />
+                            )}
+
+                            {isDeleteModalOpen && (
+                                <DeleteConstitutionModal
+                                    handleShow={handleDeleteShow}
+                                    handleClose={handleDeleteClose}
+                                    constitutionId={`${constitutionId}`}
+                                />
+                            )}
+
                         </div>
                     </div>
                 </div>
