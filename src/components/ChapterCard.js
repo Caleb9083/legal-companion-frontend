@@ -25,12 +25,12 @@ const ChapterCard = (props) => {
                     style={{ width: "30px", height: "30px", color: "#fff" }}
                 />
                 <div className="dropdown-content">
-                    <Link className="dropdown-content-item" to="#">
+                    <div className="dropdown-content-item" to="#">
                         Edit name and description
-                    </Link>
-                    <Link className="dropdown-content-item" to="#">
+                    </div>
+                    <div className="dropdown-content-item" to="#">
                         Delete
-                    </Link>
+                    </div>
                 </div>
             </div>
         </div>
