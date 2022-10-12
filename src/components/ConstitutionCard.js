@@ -27,7 +27,6 @@ const ConstitutionCard = (props) => {
 
     const handleDeleteClose = () => {
         setIsDeleteModalOpen(false);
-        console.log("close clicked");
     };
 
     return (
