@@ -5,11 +5,21 @@ import Button from "react-bootstrap/Button";
 import { BsPlusLg } from "react-icons/bs";
 import ChapterCard from "../components/ChapterCard";
 import Banner from "../components/Banner";
+import AddChapterModal from "../components/AddChapterModal";
 
 const ChaptersPage = () => {
     const [chapters, setChapters] = useState([]);
     const [constitution, setConstitution] = useState([]);
     const { constitutionId } = useParams();
+    const [isChapterModalOpen, setIsChapterModalOpen] = useState(false)
+
+    const handleChapterShow = () => {
+        setIsChapterModalOpen(true)
+    }
+
+    const handleChapterClose = () => {
+        setIsChapterModalOpen(false)
+    }
 
     useEffect(() => {
         let chaptersUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters`;
@@ -52,7 +62,8 @@ const ChaptersPage = () => {
             <div className="constitution_sub_section_title ">
                 <div className="chapter_head">
                     Chapters
-                    <Button >
+                    {isChapterModalOpen && <AddChapterModal constitutionId={`${constitutionId}`} handleShow={handleChapterShow} handleClose={handleChapterClose} />}
+                    <Button onClick={handleChapterShow} >
                         <BsPlusLg />
                         Add new chapter
                     </Button>
