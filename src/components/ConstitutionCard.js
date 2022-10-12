@@ -14,21 +14,20 @@ const ConstitutionCard = (props) => {
     const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
 
     const handleUpdateShow = () => {
-        setIsDeleteModalOpen(true);
+        setIsUpdateModalOpen(true);
     };
 
     const handleUpdateClose = () => {
         setIsUpdateModalOpen(false);
-        console.log("close clicked")
     };
 
     const handleDeleteShow = () => {
-        setIsUpdateModalOpen(true);
+        setIsDeleteModalOpen(true);
     };
 
     const handleDeleteClose = () => {
         setIsDeleteModalOpen(false);
-        console.log("close clicked")
+        console.log("close clicked");
     };
 
     return (
@@ -72,7 +71,6 @@ const ConstitutionCard = (props) => {
                                     constitutionId={`${constitutionId}`}
                                 />
                             )}
-
                         </div>
                     </div>
                 </div>

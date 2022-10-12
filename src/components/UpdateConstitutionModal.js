@@ -26,11 +26,10 @@ const UpdateConstitutionModal = ({ handleClose, handleShow, constitutionId, show
         const newConstitution = { ...constitutionData };
         newConstitution[e.target.name] = e.target.value;
         setConstitutionData(newConstitution);
-        console.log(constitutionData);
+
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault();
         axios
             .put(url, {
                 title: constitutionData.name,
