@@ -3,12 +3,14 @@ import Banner from "../components/Banner";
 import "./styles/SectionsPage.css";
 import { useParams } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
+import Button from "react-bootstrap/Button";
 
 const SectionsPage = () => {
     const [sections, setSections] = useState([]);
     const [chapter, setChapter] = useState([]);
     const [constitution, setConstitution] = useState([]);
     const { constitutionId, chapterId } = useParams();
+    const [isAddSectionModalOpen, setIsAddSectionModalOpen] = useState(false);
 
     useEffect(() => {
         let sectionsUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}/sections`;
@@ -72,6 +74,11 @@ const SectionsPage = () => {
                                 />
                             );
                         })}
+                    <div className="sections_add_button_container">
+                        <div className="sections_add_button">
+                            <Button>Add new section</Button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <Banner />
