@@ -4,10 +4,20 @@ import "./styles/ChapterCard.css";
 import { GiOpenBook } from 'react-icons/gi'
 import { BiDotsVerticalRounded } from 'react-icons/bi'
 import DeleteChapterModal from "./DeleteChapterModal";
+import UpdateChapterModal from "./UpdateChapterModal";
 
 const ChapterCard = (props) => {
     const { constitutionId, chapterId } = props;
+    const [isUpdateChapterModalOpen, setIsUpdateChapterModalOpen] = useState(false)
     const [isDeleteChapterModalOpen, setIsDeleteChapterModalOpen] = useState(false)
+
+    const handleUpdateChapterShow = () => {
+        setIsUpdateChapterModalOpen(true);
+    };
+
+    const handleUpdateChapterClose = () => {
+        setIsUpdateChapterModalOpen(false);
+    };
 
     const handleDeleteChapterShow = () => {
         setIsDeleteChapterModalOpen(true);
@@ -16,7 +26,6 @@ const ChapterCard = (props) => {
     const handleDeleteChapterClose = () => {
         setIsDeleteChapterModalOpen(false);
     };
-
     return (
         <div className="constitution_chapter_container">
             <Link
@@ -36,12 +45,20 @@ const ChapterCard = (props) => {
                     style={{ width: "30px", height: "30px", color: "#fff" }}
                 />
                 <div className="dropdown-content">
-                    <div className="dropdown-content-item" >
-                        Edit name and description
+                    <div className="dropdown-content-item" onClick={handleUpdateChapterShow} >
+                        Edit title and description
                     </div>
                     <div className="dropdown-content-item" onClick={handleDeleteChapterShow} >
                         Delete
                     </div>
+                    {isUpdateChapterModalOpen && (
+                        <UpdateChapterModal
+                            handleShow={handleUpdateChapterShow}
+                            handleClose={handleUpdateChapterClose}
+                            constitutionId={`${constitutionId}`}
+                            chapterId={`${chapterId}`}
+                        />
+                    )}
                     {isDeleteChapterModalOpen && (
                         <DeleteChapterModal
                             handleShow={handleDeleteChapterShow}

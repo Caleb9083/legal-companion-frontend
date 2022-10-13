@@ -1,14 +1,18 @@
-import React from 'react'
+import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 
-const DeleteChapterModal = ({ handleClose, handleShow, constitutionId, chapterId }) => {
+const DeleteChapterModal = ({
+    handleClose,
+    handleShow,
+    constitutionId,
+    chapterId,
+}) => {
     const url = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}`;
-    console.log(url)
     const handleOk = () => {
-        axios.delete(url).then((res) => console.log("success"))
-    }
+        axios.delete(url).then((res) => console.log("success"));
+    };
 
     return (
         <>
@@ -30,4 +34,4 @@ const DeleteChapterModal = ({ handleClose, handleShow, constitutionId, chapterId
     );
 };
 
-export default DeleteChapterModal
+export default DeleteChapterModal;
