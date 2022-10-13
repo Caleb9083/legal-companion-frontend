@@ -13,8 +13,12 @@
 .section_card_title_text{
     font-size: 1rem;
     color: #034078;
-    width: 88%;
+    width: 70%;
     margin: 0 auto;
+    
+}
+.card_icon_section{
+    width: 20%;
 }
 .section_card_content {
     color: #034078;
