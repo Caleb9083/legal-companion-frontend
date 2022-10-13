@@ -27,9 +27,9 @@ const UpdateChapterModal = ({
     }, []);
 
     const handleChange = (e) => {
-        const newConstitution = { ...chapterData };
-        newConstitution[e.target.title] = e.target.value;
-        setChapterData(newConstitution);
+        const newChapter = { ...chapterData };
+        newChapter[e.target.title] = e.target.value;
+        setChapterData(newChapter);
     };
 
     const handleSubmit = (e) => {
