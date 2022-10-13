@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import "./styles/SectionCard.css";
 import { BiDotsVerticalRounded } from "react-icons/bi"
 import UpdateSectionModal from "./UpdateSectionModal";
+import DeleteSectionModal from "./DeleteSectionModal";
 
 const SectionCard = (props) => {
     const { constitutionId, chapterId, sectionId } = props;
     const [isUpdateSectionModalOpen, setIsUpdateSectionModalOpen] = useState(false)
+    const [isDeleteSectionModalOpen, setIsDeleteSectionModalOpen] = useState(false)
 
     const handleUpdateSectionShow = () => {
         setIsUpdateSectionModalOpen(true);
@@ -13,6 +15,13 @@ const SectionCard = (props) => {
 
     const handleUpdateSectionClose = () => {
         setIsUpdateSectionModalOpen(false);
+    };
+    const handleDeleteSectionShow = () => {
+        setIsDeleteSectionModalOpen(true);
+    };
+
+    const handleDeleteSectionClose = () => {
+        setIsDeleteSectionModalOpen(false);
     };
 
     return (
@@ -27,13 +36,22 @@ const SectionCard = (props) => {
                         <div className="dropdown-content-item" onClick={handleUpdateSectionShow}>
                             Edit title and description
                         </div>
-                        <div className="dropdown-content-item">
+                        <div className="dropdown-content-item" onClick={handleDeleteSectionShow}>
                             Delete
                         </div>
                         {isUpdateSectionModalOpen && (
                             <UpdateSectionModal
                                 handleShow={handleUpdateSectionShow}
                                 handleClose={handleUpdateSectionClose}
+                                constitutionId={`${constitutionId}`}
+                                chapterId={`${chapterId}`}
+                                sectionId={`${sectionId}`}
+                            />
+                        )}
+                        {isDeleteSectionModalOpen && (
+                            <DeleteSectionModal
+                                handleShow={handleDeleteSectionShow}
+                                handleClose={handleDeleteSectionClose}
                                 constitutionId={`${constitutionId}`}
                                 chapterId={`${chapterId}`}
                                 sectionId={`${sectionId}`}
