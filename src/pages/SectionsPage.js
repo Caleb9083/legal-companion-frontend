@@ -80,6 +80,7 @@ const SectionsPage = () => {
                                     content={el.content}
                                     constitutionId={el.constitution}
                                     chapterId={el.chapter}
+                                    sectionId={el._id}
                                 />
                             );
                         })}
