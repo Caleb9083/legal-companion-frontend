@@ -4,28 +4,29 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 
-const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
+const AddSectionModal = ({ handleClose, handleShow, constitutionId, chapterId }) => {
     const url =
-        `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters`;
-    const [chapterData, setChapterData] = useState({
+        `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}/sections`;
+    const [sectionData, setSectionData] = useState({
         constitution: constitutionId,
-        name: "",
-        description: "",
+        chapter: chapterId,
+        title: "",
+        content: "",
     });
 
     const handleChange = (e) => {
-        const newConstitution = { ...chapterData };
-        newConstitution[e.target.name] = e.target.value;
-        setChapterData(newConstitution);
-        console.log(chapterData);
+        const newSection = { ...sectionData };
+        newSection[e.target.name] = e.target.value;
+        setSectionData(newSection);
+        console.log(sectionData);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         axios
             .post(url, {
-                title: chapterData.name,
-                description: chapterData.description,
+                title: sectionData.title,
+                content: sectionData.content,
             })
             .then((res) => {
                 console.log(res.data);
@@ -36,29 +37,29 @@ const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
         <>
             <Modal show={handleShow} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Add a new constitution</Modal.Title>
+                    <Modal.Title>Add a new section</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={(e) => handleSubmit(e)}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Chapter Name</Form.Label>
+                            <Form.Label>Section Title</Form.Label>
                             <Form.Control
-                                name="name"
-                                value={chapterData.name}
+                                name="title"
+                                value={sectionData.title}
                                 onChange={(e) => handleChange(e)}
                                 type="text"
-                                placeholder="Enter the name of the Chapter"
+                                placeholder="Enter the title of the section"
                             />
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Description</Form.Label>
+                            <Form.Label>Content</Form.Label>
                             <Form.Control
-                                name="description"
-                                value={chapterData.description}
+                                name="content"
+                                value={sectionData.content}
                                 onChange={(e) => handleChange(e)}
                                 as="textarea"
-                                placeholder="Enter the Description"
+                                placeholder="Enter the content for the section"
                             />
                         </Form.Group>
                         <Button variant="primary" type="submit">
@@ -77,4 +78,4 @@ const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
 }
 
 
-export default AddChapterModal
+export default AddSectionModal
