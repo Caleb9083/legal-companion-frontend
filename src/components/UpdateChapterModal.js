@@ -28,11 +28,12 @@ const UpdateChapterModal = ({
 
     const handleChange = (e) => {
         const newChapter = { ...chapterData };
-        newChapter[e.target.title] = e.target.value;
+        newChapter[e.target.name] = e.target.value;
         setChapterData(newChapter);
     };
 
     const handleSubmit = (e) => {
+        e.preventDefault();
         axios
             .put(url, {
                 title: chapterData.title,
