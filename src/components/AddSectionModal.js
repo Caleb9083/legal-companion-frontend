@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { toast } from "react-toastify"
 
 const AddSectionModal = ({ handleClose, handleShow, constitutionId, chapterId }) => {
     const url =
@@ -18,7 +19,6 @@ const AddSectionModal = ({ handleClose, handleShow, constitutionId, chapterId })
         const newSection = { ...sectionData };
         newSection[e.target.name] = e.target.value;
         setSectionData(newSection);
-        console.log(sectionData);
     };
 
     const handleSubmit = (e) => {
@@ -29,6 +29,8 @@ const AddSectionModal = ({ handleClose, handleShow, constitutionId, chapterId })
                 content: sectionData.content,
             })
             .then((res) => {
+                handleClose()
+                toast.success('Section created successfully')
                 console.log(res.data);
             });
     };

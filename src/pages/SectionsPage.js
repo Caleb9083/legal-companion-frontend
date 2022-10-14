@@ -57,7 +57,7 @@ const SectionsPage = () => {
             .then((constitutionData) => {
                 setConstitution(constitutionData);
             });
-    }, []);
+    }, [sections]);
 
     return (
         <div>

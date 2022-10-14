@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 
 
 const UpdateConstitutionModal = ({ handleClose, handleShow, constitutionId }) => {

@@ -3,6 +3,8 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { toast } from 'react-toastify';
+
 
 const UpdateChapterModal = ({
     handleClose,
@@ -40,6 +42,8 @@ const UpdateChapterModal = ({
                 description: chapterData.description,
             })
             .then((res) => {
+                handleClose()
+                toast.success('Chapter updated successfully')
                 console.log(res.data);
             });
     };

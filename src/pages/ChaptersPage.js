@@ -45,7 +45,7 @@ const ChaptersPage = () => {
             .then((constitutionData) => {
                 setConstitution(constitutionData);
             });
-    }, []);
+    }, [chapters]);
 
     return (
         <div className="chapters_container">

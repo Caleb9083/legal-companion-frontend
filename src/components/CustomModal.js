@@ -3,6 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import React, { useState } from "react";
 import axios from "axios";
+import { toast } from 'react-toastify'
 
 function CustomModal({ handleClose, handleShow }) {
     const url =
@@ -28,6 +29,7 @@ function CustomModal({ handleClose, handleShow }) {
             })
             .then((res) => {
                 handleClose()
+                toast.success('Constitution created successfully')
                 console.log(res.data);
             });
     };

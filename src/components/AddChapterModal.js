@@ -3,6 +3,8 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { toast } from "react-toastify"
+
 
 const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
     const url =
@@ -17,7 +19,6 @@ const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
         const newConstitution = { ...chapterData };
         newConstitution[e.target.name] = e.target.value;
         setChapterData(newConstitution);
-        console.log(chapterData);
     };
 
     const handleSubmit = (e) => {
@@ -28,6 +29,8 @@ const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
                 description: chapterData.description,
             })
             .then((res) => {
+                handleClose()
+                toast.success('Chapter created successfully')
                 console.log(res.data);
             });
     };
