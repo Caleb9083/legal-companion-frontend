@@ -27,6 +27,7 @@ function CustomModal({ handleClose, handleShow }) {
                 preamble: constitutionData.preamble,
             })
             .then((res) => {
+                handleClose()
                 console.log(res.data);
             });
     };

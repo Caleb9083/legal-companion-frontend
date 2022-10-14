@@ -3,9 +3,10 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { toast } from 'react-toastify'
 
 
-const UpdateConstitutionModal = ({ handleClose, handleShow, constitutionId, show }) => {
+const UpdateConstitutionModal = ({ handleClose, handleShow, constitutionId }) => {
     const url =
         `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}`;
 
@@ -30,12 +31,15 @@ const UpdateConstitutionModal = ({ handleClose, handleShow, constitutionId, show
     };
 
     const handleSubmit = (e) => {
+        e.preventDefault()
         axios
             .put(url, {
                 title: constitutionData.name,
                 preamble: constitutionData.preamble,
             })
             .then((res) => {
+                handleClose()
+                toast.success('Constitution updated successfully')
                 console.log(res.data);
             });
 

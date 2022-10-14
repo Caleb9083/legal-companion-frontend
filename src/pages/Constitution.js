@@ -31,7 +31,7 @@ const Constitution = () => {
                 setData(jsonData);
             })
             .catch((error) => console.log(`Error fetching data: ${error.message}`));
-    }, []);
+    }, [data]);
 
     return (
         <div className="constitution">
