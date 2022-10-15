@@ -61,7 +61,7 @@ const Constitution = () => {
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
-                    <Button className="search_button">
+                    <Button className="customX_button">
                         Search Document
                     </Button>
                 </form>
@@ -80,10 +80,10 @@ const Constitution = () => {
                 </div>
                 <div className="constitution_upload">
                     {isModalOpen && <CustomModal handleShow={handleShow} handleClose={handleClose} />}
-                    <Button onClick={handleShow}><FaUpload />Upload new document</Button>
+                    <Button className="customX_button" onClick={handleShow}><FaUpload /> Upload new document</Button>
                 </div>
                 <div className="constitution_bottom">
-                    <img src={consti_img} alt="consti_img" />
+                    {/* <img src={consti_img} alt="consti_img" /> */}
                 </div>
             </div>
         </div>

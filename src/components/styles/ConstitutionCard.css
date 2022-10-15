@@ -1,7 +1,7 @@
 .card {
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 300px;
+  width: 280px;
   height: 280px;
   border-radius: 25px;
   margin-bottom: 3rem;
@@ -16,7 +16,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .card_name {
   font-weight: 600;
@@ -24,6 +24,7 @@
   margin: 10px 0px;
   text-decoration: none;
   color: #034078;
+  white-space: pre-wrap;
 }
 .card_icon {
   position: relative;
@@ -36,6 +37,7 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  border-radius: 5px;
 }
 
 .dropdown-content-item {
@@ -44,13 +46,33 @@
   color: #034078;
   font-size: 0.85rem;
   margin-bottom: 0.5rem;
+  padding: 2px;
+  cursor: pointer;
 }
 
 .card_icon:hover .dropdown-content {
   display: block;
 }
 .card_open_container {
-  width: 80%;
+  width: 95.5%;
   display: flex;
   justify-content: right;
+  margin-bottom: 1rem;
+}
+
+.card_img {
+  background-image: url(../../images/book-library-with-open-textbook.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 10rem;
+}
+.open_button {
+  background-color: #034078 !important;
+  border: none !important;
+}
+.open_button:hover {
+  background-color: #fff !important;
+  color: #034078 !important;
+  border: 0.5px solid #034078 !important;
 }

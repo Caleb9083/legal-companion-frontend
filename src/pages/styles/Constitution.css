@@ -40,9 +40,15 @@
         border:1.5px solid #034078;
         /* box-shadow: 0 0 10px #034078; */
 }
-.search_button{
+.customX_button{
     background-color: #034078 !important;
     border:none !important;
+}
+.customX_button:hover{
+    background-color: #fff !important;
+    border:none !important;
+    color: #034078 !important;
+    border:1px solid #034078 !important;
 }
 
 .constitution_main{
@@ -73,4 +79,9 @@
 .constitution_bottom{
     width: 70%;
     margin: 5rem auto;
+    height: 35rem;
+    background-image: url(../../images/consti.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }

@@ -32,15 +32,16 @@ const ConstitutionCard = (props) => {
     return (
         <>
             <div className="card">
-                <img
+                <div className="card_img"></div>
+                {/* <img
                     src={img}
                     alt="Avatar"
                     style={{ width: "100%", borderRadius: "25px 25px 0px 0px" }}
-                />
+                /> */}
                 <div className="card_title_container">
                     <div className="card_name">
                         <Link className="card_name" to={`/constitutions/${constitutionId}`}>
-                            {props.title}
+                            {` ${props.title}`}
                         </Link>
                     </div>
 
@@ -75,7 +76,7 @@ const ConstitutionCard = (props) => {
                 </div>
                 <div className="card_open_container">
                     <Link to={`/constitutions/${constitutionId}`}>
-                        <Button>Open</Button>
+                        <Button className="open_button">Open</Button>
                     </Link>
                 </div>
             </div>
