@@ -44,12 +44,10 @@ const UpdateSectionModal = ({
             .then((res) => {
                 handleClose();
                 toast.success("Section updated successfully");
-                console.log(res.data);
             })
             .catch((err) => {
                 handleClose();
                 toast.error("Section not Updated!, Try again");
-                console.log(err.message);
             });
     };
     return (

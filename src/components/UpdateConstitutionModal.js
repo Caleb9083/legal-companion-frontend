@@ -42,12 +42,10 @@ const UpdateConstitutionModal = ({
             .then((res) => {
                 handleClose();
                 toast.success("Constitution updated successfully");
-                console.log(res.data);
             })
             .catch((err) => {
                 handleClose();
                 toast.error("Constitution not Updated!, Try again");
-                console.log(err.message);
             });
     };
     return (
