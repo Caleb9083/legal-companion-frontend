@@ -1,5 +1,5 @@
 .navigation_container {
-  width: 100%;
+   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,16 +9,18 @@
   margin-left: 80px;
 }
 .navigation {
-  height: 50px;
-  width: auto;
+
+  height: 70px;
+  width: 50%;
   display: flex;
+  justify-content: left;
   align-items: center;
   position: relative;
-  padding: 0.5rem 0rem;
+  /* padding: 0.5rem 0rem; */
   background-color: #fff;
   color: #034078;
   font-size: 1.5rem;
-  box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 0px 10px;
 }
 .brand-name {
@@ -28,16 +30,19 @@
   font-size: 1.5rem;
 }
 .navigation-menu {
-  margin-left: auto;
+  margin-left: 36px;;
 }
 .navigation-menu ul {
   display: flex;
+  margin-top:0.5rem !important;
   padding: 0;
 }
 .navigation-menu li {
   list-style-type: none;
   margin: 0 2rem;
   color: #034078;
+  font-size:15px;
+  text-transform: uppercase;
 }
 .navigation-menu li a {
   text-decoration: none;

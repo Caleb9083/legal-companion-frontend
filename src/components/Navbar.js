@@ -36,6 +36,9 @@ const Navbar = () => {
                         }>
                         <ul>
                             <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
                                 <a href="/constitutions">Constitutions</a>
                             </li>
                             <li>

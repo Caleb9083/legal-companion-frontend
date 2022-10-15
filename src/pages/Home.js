@@ -10,8 +10,11 @@ const Home = () => {
                 <Hero />
             </div>
             <div className='hero_next_section'>
-                <div>
-                    <img style={{ height: "500px", width: "100%" }} src={hero_next_img} alt="hero_next_img" />
+                <div className="hero_next_img">
+                    {/* <img style={{
+                        height: "500px", width: "100%", backgroundPosition: "center",
+                        backgroundSize: "cover"
+                    }} src={hero_next_img} alt="hero_next_img" /> */}
                 </div>
                 <div className="features_section">
                     <Features />

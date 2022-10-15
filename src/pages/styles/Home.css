@@ -1,1 +1,11 @@
+.hero_next_section{
+    
 
+}
+.hero_next_img{
+    width:100%;
+    height: 450px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/wooden-gavel-books-wooden-table\ \(1\).jpg);
+}

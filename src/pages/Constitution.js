@@ -37,13 +37,19 @@ const Constitution = () => {
         <div className="constitution">
             <div className="constitution_hero_section">
                 <div className="constituion_hero_text top">
+                    Legislative instruments
+                </div>
+                <div className="constituion_hero_text">
                     Read through the popular legislative instruments
                 </div>
                 <div className="constituion_hero_text">
                     Edit name and preamble of existing legislative instruments
                 </div>
                 <div className="constituion_hero_text">
-                    Upload new legislative instruments as well
+                    Upload new legislative instruments
+                </div>
+                <div className="constituion_hero_text">
+                    Delete legislative instruments as well
                 </div>
             </div>
             <div className="constitution_search">
@@ -55,7 +61,7 @@ const Constitution = () => {
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
-                    <Button >
+                    <Button className="search_button">
                         Search Document
                     </Button>
                 </form>

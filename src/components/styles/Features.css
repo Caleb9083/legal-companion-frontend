@@ -2,28 +2,31 @@
     width: 90%;
     height: 600px;
     margin-left: 80px;
+    margin-top:7rem;
 }
 .features-top{
     width: 100%;
-    height: 30%;
+    height: 23.5%;
 }
 .features-middle{
     display: flex;
     width: 100%;
-    height: 30%;
-    justify-content: space-between;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
 }
 .features-bottom{
     width: 100%;
     height: 30%;
 }
 .feature-item{
-    height: 100%;
+    height: 80%;
     width: 30%
 }
 
 .feature_span{
-    font-size: 2rem;
+    font-size: 1.7rem;
     display: block;
     color: #034078;
     text-align: center;
@@ -33,6 +36,9 @@
     margin: 0 auto;
 }
 .feature-img{
+    background-image: url(../../images/book-library-with-open-textbook.jpg);
+    background-size: cover;
+    border-radius: 50px;
     width: 30%;
     height: 90%;
 }
