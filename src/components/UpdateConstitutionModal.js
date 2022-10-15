@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
-
-const UpdateConstitutionModal = ({ handleClose, handleShow, constitutionId }) => {
-    const url =
-        `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}`;
+const UpdateConstitutionModal = ({
+    handleClose,
+    handleShow,
+    constitutionId,
+}) => {
+    const url = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}`;
 
     const [constitutionData, setConstitutionData] = useState({
         name: "",
@@ -16,33 +18,37 @@ const UpdateConstitutionModal = ({ handleClose, handleShow, constitutionId }) =>
     });
 
     useEffect(() => {
-        axios.get(url).then((res) => setConstitutionData({
-            name: res.data.title,
-            preamble: res.data.preamble,
-        }))
-    }, [])
-
+        axios.get(url).then((res) =>
+            setConstitutionData({
+                name: res.data.title,
+                preamble: res.data.preamble,
+            })
+        );
+    }, []);
 
     const handleChange = (e) => {
         const newConstitution = { ...constitutionData };
         newConstitution[e.target.name] = e.target.value;
         setConstitutionData(newConstitution);
-
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         axios
             .put(url, {
                 title: constitutionData.name,
                 preamble: constitutionData.preamble,
             })
             .then((res) => {
-                handleClose()
-                toast.success('Constitution updated successfully')
+                handleClose();
+                toast.success("Constitution updated successfully");
                 console.log(res.data);
+            })
+            .catch((err) => {
+                handleClose();
+                toast.error("Constitution not Updated!, Try again");
+                console.log(err.message);
             });
-
     };
     return (
         <>
@@ -85,7 +91,7 @@ const UpdateConstitutionModal = ({ handleClose, handleShow, constitutionId }) =>
                 </Modal.Footer>
             </Modal>
         </>
-    )
-}
+    );
+};
 
-export default UpdateConstitutionModal
+export default UpdateConstitutionModal;

@@ -3,7 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import React, { useState } from "react";
 import axios from "axios";
-import { toast } from 'react-toastify'
+import { toast } from "react-toastify";
 
 function CustomModal({ handleClose, handleShow }) {
     const url =
@@ -17,7 +17,6 @@ function CustomModal({ handleClose, handleShow }) {
         const newConstitution = { ...constitutionData };
         newConstitution[e.target.name] = e.target.value;
         setConstitutionData(newConstitution);
-        console.log(constitutionData);
     };
 
     const handleSubmit = (e) => {
@@ -28,9 +27,14 @@ function CustomModal({ handleClose, handleShow }) {
                 preamble: constitutionData.preamble,
             })
             .then((res) => {
-                handleClose()
-                toast.success('Constitution created successfully')
+                handleClose();
+                toast.success("Constitution created successfully");
                 console.log(res.data);
+            })
+            .catch((err) => {
+                handleClose();
+                toast.error("Constitution not created!, Try again.");
+                console.log(err.message);
             });
     };
 

@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 
-const AddSectionModal = ({ handleClose, handleShow, constitutionId, chapterId }) => {
-    const url =
-        `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}/sections`;
+const AddSectionModal = ({
+    handleClose,
+    handleShow,
+    constitutionId,
+    chapterId,
+}) => {
+    const url = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}/sections`;
     const [sectionData, setSectionData] = useState({
         constitution: constitutionId,
         chapter: chapterId,
@@ -29,9 +33,14 @@ const AddSectionModal = ({ handleClose, handleShow, constitutionId, chapterId })
                 content: sectionData.content,
             })
             .then((res) => {
-                handleClose()
-                toast.success('Section created successfully')
+                handleClose();
+                toast.success("Section created successfully");
                 console.log(res.data);
+            })
+            .catch((err) => {
+                handleClose();
+                toast.error("Section not created!, Try again");
+                console.log(err.message);
             });
     };
 
@@ -77,7 +86,6 @@ const AddSectionModal = ({ handleClose, handleShow, constitutionId, chapterId })
             </Modal>
         </>
     );
-}
+};
 
-
-export default AddSectionModal
+export default AddSectionModal;

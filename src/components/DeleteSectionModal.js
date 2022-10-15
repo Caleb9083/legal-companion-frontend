@@ -4,7 +4,6 @@ import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-
 const DeleteSectionModal = ({
     handleClose,
     handleShow,
@@ -14,11 +13,18 @@ const DeleteSectionModal = ({
 }) => {
     const url = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}/sections/${sectionId}`;
     const handleOk = () => {
-        axios.delete(url).then((res) => {
-            handleClose();
-            toast.success("Section deleted successfully");
-            console.log(res.data)
-        });
+        axios
+            .delete(url)
+            .then((res) => {
+                handleClose();
+                toast.success("Section deleted successfully");
+                console.log(res.data);
+            })
+            .catch((err) => {
+                handleClose();
+                toast.error("Section not deleted!, Try again");
+                console.log(err.message);
+            });
     };
 
     return (
@@ -41,4 +47,4 @@ const DeleteSectionModal = ({
     );
 };
 
-export default DeleteSectionModal
+export default DeleteSectionModal;

@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const UpdateSectionModal = ({
     handleClose,
@@ -42,9 +42,14 @@ const UpdateSectionModal = ({
                 content: sectionData.content,
             })
             .then((res) => {
-                handleClose()
-                toast.success('Section updated successfully')
+                handleClose();
+                toast.success("Section updated successfully");
                 console.log(res.data);
+            })
+            .catch((err) => {
+                handleClose();
+                toast.error("Section not Updated!, Try again");
+                console.log(err.message);
             });
     };
     return (

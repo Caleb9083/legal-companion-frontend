@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
-import { toast } from "react-toastify"
-
+import { toast } from "react-toastify";
 
 const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
-    const url =
-        `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters`;
+    const url = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters`;
     const [chapterData, setChapterData] = useState({
         constitution: constitutionId,
         name: "",
@@ -29,9 +27,14 @@ const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
                 description: chapterData.description,
             })
             .then((res) => {
-                handleClose()
-                toast.success('Chapter created successfully')
+                handleClose();
+                toast.success("Chapter created successfully");
                 console.log(res.data);
+            })
+            .catch((err) => {
+                handleClose();
+                toast.error("Chapter not created!, Try again");
+                console.log(err.message);
             });
     };
 
@@ -77,7 +80,6 @@ const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
             </Modal>
         </>
     );
-}
+};
 
-
-export default AddChapterModal
+export default AddChapterModal;

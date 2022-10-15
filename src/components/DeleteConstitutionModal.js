@@ -12,11 +12,18 @@ const DeleteConstitutionModal = ({
     const url = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}`;
 
     const handleOk = () => {
-        axios.delete(url).then((res) => {
-            handleClose();
-            toast.success("Constitution deleted successfully");
-            console.log(res.data)
-        });
+        axios
+            .delete(url)
+            .then((res) => {
+                handleClose();
+                toast.success("Constitution deleted successfully");
+                console.log(res.data);
+            })
+            .catch((err) => {
+                handleClose();
+                toast.error("Constitution not deleted!, Try again");
+                console.log(err.message);
+            });
     };
 
     return (
