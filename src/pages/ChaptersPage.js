@@ -52,7 +52,7 @@ const ChaptersPage = () => {
             <div className="constitution_title">
                 {constitution && constitution.title}
             </div>
-            <div className="constituion_img"></div>
+
             <div className="constitution_sub_section_title">Preamble</div>
             <div className="constitution_preamble_container">
                 <div className="constitution_preamble_body">
@@ -63,8 +63,8 @@ const ChaptersPage = () => {
                 <div className="chapter_head">
                     Chapters
                     {isChapterModalOpen && <AddChapterModal constitutionId={`${constitutionId}`} handleShow={handleChapterShow} handleClose={handleChapterClose} />}
-                    <Button onClick={handleChapterShow} >
-                        <BsPlusLg />
+                    <Button className="customX_button" onClick={handleChapterShow} >
+                        <BsPlusLg style={{ marginRight: "4px", width: "0.8rem" }} />
                         Add new chapter
                     </Button>
                 </div>

@@ -5,30 +5,29 @@
 .constitution_title{
     width: 88%;
     color: #034078;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin: 0 auto;
 }
-.constituion_img{
-    width: 100%;
-    height: 50px;
-}
+
 .constitution_preamble_container{
     width: 88%;
     margin: 0 auto;
 }
 .constitution_sub_section_title{
-    width: 94%;
+    width: 100%;
     padding: 20px 0px 20px 80px;
     font-size: 2rem;
     color:#034078;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 .constitution_preamble_body{
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color:#034078;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+    line-height: 1;
 }
 .chapter_head{
     display: flex;

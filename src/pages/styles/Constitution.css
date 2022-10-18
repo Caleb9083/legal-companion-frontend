@@ -59,7 +59,8 @@
     height: 40px;
     width: 100%;
     color:#034078;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 px 0 rgba(0, 0, 0, 0.2); */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 8px -5px;
     margin-bottom: 1rem;
 }
 
