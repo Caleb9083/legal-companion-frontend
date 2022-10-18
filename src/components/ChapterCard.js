@@ -45,7 +45,7 @@ const ChapterCard = (props) => {
                     </div>
                 </div>
             </Link>
-            <div className="card_icon">
+            <div className="card_icon chapter_card_icon">
                 <BiDotsVerticalRounded
                     style={{ width: "30px", height: "30px", color: "#fff" }}
                 />
