@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
+
 }
 .section_card_title_text{
     font-size: 1rem;
@@ -19,10 +20,12 @@
 }
 .card_icon_section{
     width: 20%;
+    display: flex;
+    justify-content: center;
 }
 .section_card_content {
     color: #034078;
-    width: 88%;
+    width: 86%;
     margin: 0 auto;
     white-space: pre-wrap;
     /* background-color: #03407827; */
