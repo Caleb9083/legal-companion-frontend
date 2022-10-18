@@ -11,8 +11,8 @@ import SectionsPage from './pages/SectionsPage';
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -27,8 +27,9 @@ function App() {
             />
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
-      <Footer />
+
     </div>
   );
 }

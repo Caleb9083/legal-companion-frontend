@@ -1,57 +1,74 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./styles/Navbar.css";
 
 const Navbar = () => {
-    const [isNavExpanded, setIsNavExpanded] = useState(false);
+    const [click, setClick] = useState(false);
+    const [button, setButton] = useState(true);
+
+    const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
+
+    const showButton = () => {
+        if (window.innerWidth <= 960) {
+            setButton(false);
+        } else {
+            setButton(true);
+        }
+    };
+
+    useEffect(() => {
+        showButton();
+    }, []);
+
+    window.addEventListener("resize", showButton);
+
     return (
-        <div >
-            <nav className="navigation_container">
-                <div className="navigation_logo">
-                    <a href="/" className="brand-name">
-                        LEGAL COMPANION
-                    </a>
-                </div>
-                <div className="navigation">
-                    <button
-                        className="hamburger"
-                        onClick={() => {
-                            setIsNavExpanded(!isNavExpanded);
-                        }}>
-                        {/* icon from heroicons.com */}
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
-                            viewBox="0 0 20 20"
-                            fill="white">
-                            <path
-                                fillRule="evenodd"
-                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                                clipRule="evenodd"
-                            />
-                        </svg>
-                    </button>
-                    <div
-                        className={
-                            isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
-                        }>
-                        <ul>
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
-                            <li>
-                                <a href="/constitutions">Constitutions</a>
-                            </li>
-                            <li>
-                                <a href="/about">About</a>
-                            </li>
-                            <li>
-                                <a href="/contact">Contact</a>
-                            </li>
-                        </ul>
+        <>
+            <nav className="navbar">
+                <div className="navbar-container">
+                    <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+                        Legal Companion
+                    </Link>
+                    <div className="menu-icon" onClick={handleClick}>
+                        <i className={click ? "fas fa-times" : "fas fa-bars"} />
                     </div>
+                    <ul className={click ? "nav-menu active" : "nav-menu"}>
+                        <li className="nav-item">
+                            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                                Home
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link
+                                to="/constitutions"
+                                className="nav-links"
+                                onClick={closeMobileMenu}>
+                                Constitutions
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link
+                                to="/about"
+                                className="nav-links"
+                                onClick={closeMobileMenu}>
+                                About
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                                to="/services"
+                                className="nav-links"
+                                onClick={closeMobileMenu}>
+                                Services
+                            </Link>
+                        </li>
+                    </ul>
+                    {button}
                 </div>
             </nav>
-        </div>
+        </>
     );
 };
 
