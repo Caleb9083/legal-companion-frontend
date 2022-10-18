@@ -2,7 +2,6 @@ import React from "react";
 import "./styles/Hero.css";
 import Button from "react-bootstrap/Button"
 import { AiFillEye } from 'react-icons/ai';
-import hero_right_img from "../images/court-hammer-books-judgment-law-concept.jpg"
 
 const Hero = () => {
     return (
@@ -20,7 +19,6 @@ const Hero = () => {
             </div>
             <div className="hero_right">
                 <div className="hero_image_container">
-                    {/* <img style={{ height: "100%", width: "100%" }} src={hero_right_img} alt="hero_right_img" /> */}
                 </div>
             </div>
 
