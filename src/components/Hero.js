@@ -2,6 +2,7 @@ import React from "react";
 import "./styles/Hero.css";
 import Button from "react-bootstrap/Button"
 import { AiFillEye } from 'react-icons/ai';
+import { Link } from "react-router-dom"
 
 const Hero = () => {
     return (
@@ -14,7 +15,9 @@ const Hero = () => {
                     <span>about?</span>
                 </div>
                 <div className="button_container">
-                    <Button variant="primary" className="size"><AiFillEye /> View Constitutions</Button>
+                    <Link className="link" to="/constitutions">
+                        <Button variant="primary" className="size"><AiFillEye style={{ marginRight: "4px" }} /> View Constitutions</Button>
+                    </Link>
                 </div>
             </div>
             <div className="hero_right">
