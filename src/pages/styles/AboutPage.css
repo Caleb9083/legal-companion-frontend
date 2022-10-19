@@ -1,0 +1,32 @@
+  
+  .about-section_top {
+    padding: 50px;
+    text-align: center;
+    background-color: #115594;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  .about-section_top_contents{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .about_our_team{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #034078;
+  }
+  
+ .about_card_container{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+ }
+  
+  
+ 
