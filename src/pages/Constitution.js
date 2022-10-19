@@ -2,22 +2,21 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import "./styles/Constitution.css";
 import ConstitutionCard from "../components/ConstitutionCard";
-import { FaUpload } from 'react-icons/fa'
-import consti_img from '../images/consti.png'
+import { FaUpload } from "react-icons/fa";
 import CustomModal from "../components/CustomModal";
 
 const Constitution = () => {
     const [searchValue, setSearchValue] = useState("");
     const [data, setData] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleShow = () => {
-        setIsModalOpen(true)
-    }
+        setIsModalOpen(true);
+    };
 
     const handleClose = () => {
-        setIsModalOpen(false)
-    }
+        setIsModalOpen(false);
+    };
 
     useEffect(() => {
         fetch("https://project-legal-companion.herokuapp.com/api/v2/constitutions/")
@@ -36,9 +35,7 @@ const Constitution = () => {
     return (
         <div className="constitution">
             <div className="constitution_hero_section">
-                <div className="constituion_hero_text top">
-                    Legislative instruments
-                </div>
+                <div className="constituion_hero_text top">Legislative instruments</div>
                 <div className="constituion_hero_text">
                     Read through the popular legislative instruments
                 </div>
@@ -61,9 +58,7 @@ const Constitution = () => {
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
-                    <Button className="customX_button">
-                        Search Document
-                    </Button>
+                    <Button className="customX_button">Search Document</Button>
                 </form>
             </div>
             <div className="constitution_main">
@@ -79,12 +74,14 @@ const Constitution = () => {
                         ))}
                 </div>
                 <div className="constitution_upload">
-                    {isModalOpen && <CustomModal handleShow={handleShow} handleClose={handleClose} />}
-                    <Button className="customX_button" onClick={handleShow}><FaUpload /> Upload new document</Button>
+                    {isModalOpen && (
+                        <CustomModal handleShow={handleShow} handleClose={handleClose} />
+                    )}
+                    <Button className="customX_button" onClick={handleShow}>
+                        <FaUpload /> Upload new document
+                    </Button>
                 </div>
-                <div className="constitution_bottom">
-                    {/* <img src={consti_img} alt="consti_img" /> */}
-                </div>
+                <div className="constitution_bottom"></div>
             </div>
         </div>
     );

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./styles/ConstitutionCard.css";
-import img from "../images/download.png";
 import { Link } from "react-router-dom";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import Button from "react-bootstrap/Button";
@@ -33,11 +32,6 @@ const ConstitutionCard = (props) => {
         <>
             <div className="card">
                 <div className="card_img"></div>
-                {/* <img
-                    src={img}
-                    alt="Avatar"
-                    style={{ width: "100%", borderRadius: "25px 25px 0px 0px" }}
-                /> */}
                 <div className="card_title_container">
                     <div className="card_name">
                         <Link className="card_name" to={`/constitutions/${constitutionId}`}>

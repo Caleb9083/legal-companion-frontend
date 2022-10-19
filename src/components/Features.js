@@ -17,9 +17,7 @@ const Features = () => {
                     <span className="feature_span">popular legislative</span>
                     <span className="feature_span">instruments</span>
                 </div>
-                <div className="feature-img">
-                    {/* <img style={{ height: "100%", width: "100%" }} src={features_img} alt="features_img" /> */}
-                </div>
+                <div className="feature-img"></div>
                 <div className="feature-item">
                     <span className="feature_span">Update some of the</span>
                     <span className="feature_span">popular legislative</span>
