@@ -54,9 +54,9 @@ const UpdateSectionModal = ({
         <>
             <Modal show={handleShow} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Update Chapter Section</Modal.Title>
+                    <Modal.Title style={{ color: "#034078" }}>Update Chapter Section</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body style={{ color: "#034078" }}>
                     <Form onSubmit={(e) => handleSubmit(e)}>
                         <Form.Group className="mb-3">
                             <Form.Label>Section Title</Form.Label>
@@ -79,7 +79,7 @@ const UpdateSectionModal = ({
                                 placeholder="Enter the content for this section"
                             />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button style={{ backgroundColor: "#034078", color: "#fff", border: "none" }} variant="primary" type="submit">
                             Submit
                         </Button>
                     </Form>

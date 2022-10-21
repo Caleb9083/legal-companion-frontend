@@ -52,9 +52,9 @@ const UpdateConstitutionModal = ({
         <>
             <Modal show={handleShow} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Update constitution</Modal.Title>
+                    <Modal.Title style={{ color: "#034078" }}>Update constitution</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body style={{ color: "#034078" }}>
                     <Form onSubmit={(e) => handleSubmit(e)}>
                         <Form.Group className="mb-3">
                             <Form.Label>Constitution Name</Form.Label>
@@ -77,7 +77,7 @@ const UpdateConstitutionModal = ({
                                 placeholder="Enter the Preamble"
                             />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button style={{ backgroundColor: "#034078", color: "#fff", border: "none" }} variant="primary" type="submit">
                             Submit
                         </Button>
                     </Form>
