@@ -42,7 +42,7 @@ const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
         <>
             <Modal show={handleShow} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Add a new constitution</Modal.Title>
+                    <Modal.Title>Add a new chapter</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={(e) => handleSubmit(e)}>

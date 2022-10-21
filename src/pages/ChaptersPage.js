@@ -75,8 +75,8 @@ const ChaptersPage = () => {
                         );
                     })}
             </div>
-            <div>
-                <div className="chapter_head">
+            <div className="chapter_add_button_container">
+                <div className="chapter_add_button">
                     {isChapterModalOpen && (
                         <AddChapterModal
                             constitutionId={`${constitutionId}`}
