@@ -1,35 +1,3 @@
-/* footer{
-    width: 100%;
-    height: 150px;
-    background-color:#034078;
-    padding:5rem;
-}
-.footer_top{
-    height: 40%;
-    width:100%;
-    display: flex;
-}
-.footer_top_items{
-    width: 33.3%;
-    border: 1px solid #aaa;
-    font-size: 1.5rem;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.footer_bottom{
-    height: 60%;
-    width:100%;
-    text-align: center;
-    font-size: 2rem;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    font-weight: bold;
-    color: #fff;
-} */
-
 section {
   width: 100%;
   display: inline-block;
@@ -221,8 +189,87 @@ section {
     width: 37%;
   }
   .footer-distributed .footer-right {
-    width: 25%;
+    width: 30%;
   }
+  .footer-distributed h3 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .footer-distributed h3 span {
+    font-size: 1rem;
+  }
+  
+  /* Footer links */
+  
+  .footer-distributed .footer-links {
+    margin: 10px 0 6px;
+  }
+  
+  .footer-distributed .footer-links .some_a {
+    line-height: 1.4;
+    font-weight: 300;
+    font-size: 11px;
+  }
+  
+  .footer-distributed .footer-company-name {
+    font-size: 10px;
+  }
+
+  /* Footer Center */
+.footer-distributed .footer-center i {
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+  margin: 5px 10px;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.footer-distributed .footer-center p {
+  font-size: 12px;
+  font-weight: 300;
+
+}
+
+.footer-distributed .footer-center p span {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.footer-distributed .footer-links a{
+  font-weight: 300;
+  font-size: 14px;
+  border-right: 1px solid white;
+  padding: 0 3px;
+ 
+}
+/* Footer Right */
+
+.footer-distributed .footer-company-about {
+  line-height: 15px;
+  font-size: 13px;
+}
+
+.footer-distributed .footer-company-about span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+  margin-top: 20px;
+}
+
+
+
+
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */
