@@ -213,6 +213,18 @@ section {
   margin-bottom: 5px;
 }
 
+@media screen and (max-width: 1024px){
+  .footer-distributed .footer-left {
+    width: 33%;
+  }
+  .footer-distributed .footer-center {
+    width: 37%;
+  }
+  .footer-distributed .footer-right {
+    width: 25%;
+  }
+}
+
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {

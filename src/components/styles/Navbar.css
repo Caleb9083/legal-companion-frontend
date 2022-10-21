@@ -83,6 +83,11 @@
 .menu-icon {
   display: none;
 }
+@media screen and (max-width: 1024px){
+  .navbar-logo {
+    margin-left: 100px;
+  }
+}
 
 @media screen and (max-width: 960px) {
   .NavbarItems {
