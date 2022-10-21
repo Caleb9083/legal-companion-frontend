@@ -30,9 +30,9 @@ const DeleteConstitutionModal = ({
         <>
             <Modal show={handleShow} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Delete Constitution</Modal.Title>
+                    <Modal.Title style={{ color: "#034078" }}>Delete Constitution</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body style={{ color: "#034078" }}>
                     Are you sure you want to delete this constitution
                 </Modal.Body>
                 <Modal.Footer>

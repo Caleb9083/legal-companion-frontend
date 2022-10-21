@@ -30,9 +30,9 @@ const DeleteChapterModal = ({
         <>
             <Modal show={handleShow} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Delete Chapter</Modal.Title>
+                    <Modal.Title style={{ color: "#034078" }}>Delete Chapter</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Are you sure you want to delete this chapter</Modal.Body>
+                <Modal.Body style={{ color: "#034078" }}>Are you sure you want to delete this chapter</Modal.Body>
                 <Modal.Footer>
                     <Button variant="danger" onClick={handleOk}>
                         Yes

@@ -31,9 +31,9 @@ const DeleteSectionModal = ({
         <>
             <Modal show={handleShow} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Delete Section</Modal.Title>
+                    <Modal.Title style={{ color: "#034078" }}>Delete Section</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Are you sure you want to delete this section</Modal.Body>
+                <Modal.Body style={{ color: "#034078" }}>Are you sure you want to delete this section</Modal.Body>
                 <Modal.Footer>
                     <Button variant="danger" onClick={handleOk}>
                         Yes
