@@ -35,7 +35,7 @@ const ConstitutionCard = (props) => {
                 <div className="card_title_container">
                     <div className="card_name">
                         <Link className="card_name" to={`/constitutions/${constitutionId}`}>
-                            {` ${props.title}`}
+                            {`${props.title}`}
                         </Link>
                     </div>
 
@@ -45,7 +45,7 @@ const ConstitutionCard = (props) => {
                         />
                         <div className="dropdown-content">
                             <div className="dropdown-content-item" onClick={handleUpdateShow}>
-                                Edit name and preamble
+                                Edit name or preamble
                             </div>
                             <div className="dropdown-content-item" onClick={handleDeleteShow}>
                                 Delete

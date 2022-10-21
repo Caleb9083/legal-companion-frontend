@@ -1,21 +1,27 @@
 .constitution_chapter_container {
-  background-color: #034078;
+  background-color: #fff;
   height: 80px;
   width: 65%;
+  /* border: 1px solid #034078;
+  
+   */
+   box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
   margin-bottom: 2rem;
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding:0 1rem 0.5rem 1rem;
 }
 .link {
   width: 90%;
   text-decoration: none;
-  color: #fff;
+  color: #034078;
   justify-content: center;
 }
 .link:hover {
-  color: #fff;
+  color:#034078;
+  
 }
 .constitution_chapter_name {
   display: flex;

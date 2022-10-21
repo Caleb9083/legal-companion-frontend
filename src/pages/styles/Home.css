@@ -3,9 +3,20 @@
 
 }
 .hero_next_img{
+    margin-bottom:8rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
     width:100%;
     height: 450px;
     background-position: center;
     background-size: cover;
-    background-image: url(../../images/wooden-gavel-books-wooden-table\ \(1\).jpg);
+    background-image: linear-gradient(to left top,rgba(2, 42, 80, 0.7),rgba(18, 70, 119, 0.7),rgba(75, 135, 190, 0.7)),url(../../images/wooden-gavel-books-wooden-table\ \(1\).jpg);
+}
+.caption{
+    width:70%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight:500;
+    color:white;
 }

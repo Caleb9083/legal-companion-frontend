@@ -4,6 +4,7 @@ import "./styles/Constitution.css";
 import ConstitutionCard from "../components/ConstitutionCard";
 import { FaUpload } from "react-icons/fa";
 import CustomModal from "../components/CustomModal";
+import vid from "../images/background-video.mp4";
 
 const Constitution = () => {
     const [searchValue, setSearchValue] = useState("");
@@ -33,55 +34,83 @@ const Constitution = () => {
     }, [data]);
 
     return (
-        <div className="constitution">
-            <div className="constitution_hero_section">
-                <div className="constituion_hero_text top">Legislative instruments</div>
-                <div className="constituion_hero_text">
-                    Read through the popular legislative instruments
+        <div>
+            <div className="constitution">
+                <div className="constitution_hero_section">
+                    <div className="constituion_hero_text_top">
+                        Legislative instruments
+                    </div>
+                    <div className="constituion_hero_text_down">
+                        <div className="constituion_hero_text">
+                            Read through the popular legislative instruments.
+                        </div>
+                        <div className="constituion_hero_text">
+                            Edit name and preamble of existing legislative instruments.
+                        </div>
+                        <div className="constituion_hero_text">
+                            Upload new legislative instruments.
+                        </div>
+                        <div className="constituion_hero_text">
+                            Delete legislative instruments as well.
+                        </div>
+                    </div>
                 </div>
-                <div className="constituion_hero_text">
-                    Edit name and preamble of existing legislative instruments
+                <div className="constitution_search">
+                    <form className="search_field_container">
+                        <input
+                            className="search_input"
+                            name="search"
+                            type="text"
+                            value={searchValue}
+                            onChange={(e) => setSearchValue(e.target.value)}
+                        />
+                        <Button className="customX_button">Search Document</Button>
+                    </form>
                 </div>
-                <div className="constituion_hero_text">
-                    Upload new legislative instruments
-                </div>
-                <div className="constituion_hero_text">
-                    Delete legislative instruments as well
+                <div className="constitution_main">
+                    <div className="constitution_main_head">All Documents</div>
+                    <div className="constitution_main_body">
+                        {data &&
+                            data.map((el) => (
+                                <ConstitutionCard
+                                    key={el._id}
+                                    title={el.title}
+                                    constitutionId={el._id}
+                                />
+                            ))}
+                    </div>
+                    <div className="constitution_upload">
+                        {isModalOpen && (
+                            <CustomModal handleShow={handleShow} handleClose={handleClose} />
+                        )}
+                        <Button className="customX_button" onClick={handleShow}>
+                            <FaUpload /> Upload new document
+                        </Button>
+                    </div>
+                    {/* <div className="constitution_bottom">
+                    <div className="constitution_bottom_left"></div>
+                    <div className="constitution_bottom_right"></div>
+                </div> */}
                 </div>
             </div>
-            <div className="constitution_search">
-                <form className="search_field_container">
-                    <input
-                        className="search_input"
-                        name="search"
-                        type="text"
-                        value={searchValue}
-                        onChange={(e) => setSearchValue(e.target.value)}
-                    />
-                    <Button className="customX_button">Search Document</Button>
-                </form>
-            </div>
-            <div className="constitution_main">
-                <div className="constitution_main_head">All Documents</div>
-                <div className="constitution_main_body">
-                    {data &&
-                        data.map((el) => (
-                            <ConstitutionCard
-                                key={el._id}
-                                title={el.title}
-                                constitutionId={el._id}
-                            />
-                        ))}
-                </div>
-                <div className="constitution_upload">
-                    {isModalOpen && (
-                        <CustomModal handleShow={handleShow} handleClose={handleClose} />
-                    )}
-                    <Button className="customX_button" onClick={handleShow}>
-                        <FaUpload /> Upload new document
-                    </Button>
-                </div>
-                <div className="constitution_bottom"></div>
+            <div className="background_video">
+                {/* <video className="background_video_content" autoplay muted loop>
+                <source src={vid} type="video/mp4"></source>
+            </video> */}
+                <video
+                    src={vid}
+                    autoPlay
+                    loop
+                    muted
+                    className="background_video_content"
+                />
+                <div className="foreground">PMinim eu reprehenderit adipisicing deserunt officia. Cupidatat proident
+                    dolore ea labore. Laboris ut dolore tempor nisi voluptate officia
+                    officia. Cillum excepteur elit in officia nisi magna minim nisi officia
+                    eu tempor proident nulla. Do aute mollit reprehenderit elit proident qui
+                    est id consequat aliquip excepteur. Fugiat id reprehenderit id minim
+                    tempor ex ut nostrud eu et.</div>
+
             </div>
         </div>
     );

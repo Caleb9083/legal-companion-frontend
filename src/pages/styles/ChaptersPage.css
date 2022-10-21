@@ -3,40 +3,69 @@
 }
 
 .constitution_title{
-    width: 88%;
-    color: #034078;
-    font-size: 2.5rem;
-    margin: 0 auto;
+    width: 80%;
+    margin: -2rem auto 0 auto;
+
+    font-size: 3rem;
+    font-size: 4rem;
+    font-weight: 500;
+    color: transparent;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(#034078, #034078, #98b8d6);
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 .constitution_preamble_container{
     width: 88%;
     margin: 0 auto;
+    
 }
 .constitution_sub_section_title{
-    width: 100%;
+    /* width: 100%;
     padding: 20px 0px 20px 80px;
     font-size: 2rem;
     color:#034078;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem; */
+
+
+    border-radius: 5px;
+    padding: 8px 0 0 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    height: 40px;
+    width: 80%;
+    margin:0 auto;
+    color: white;
+    background-color: red;
+    /* background-image:linear-gradient(to left top,rgb(44, 101, 151),#034078,#5d8ebb ); */
+    background-color: #00dbde;
+    background-image: linear-gradient(90deg, #034078 0%, #6899c7 100%);
+  
+    /* box-shadow: 0 px 0 rgba(0, 0, 0, 0.2); */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 8px -5px;
     margin-bottom: 1rem;
 }
 .constitution_preamble_body{
-    width: 100%;
+    width: 80%;
+    margin:0 auto;
     font-size: 1rem;
     color:#034078;
     margin-bottom: 1rem;
     white-space: pre-wrap;
-    line-height: 1;
+    /* line-height: 1; */
+    margin-bottom:3rem;
 }
 .chapter_head{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 60%
+    height:100%;
+    position:relative;
 }
 
 .constitution_chapters{
-    width: 88%;
-    margin: 0 auto 7rem auto;
+    width: 80%;
+    margin: 0 auto 7rem 12.5rem;
 }

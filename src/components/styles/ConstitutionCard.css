@@ -1,7 +1,8 @@
 .card {
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2); */
+  box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
   transition: 0.3s;
-  width: 280px;
+  width: 250px;
   height: 280px;
   border-radius: 25px;
   margin-bottom: 3rem;
@@ -17,37 +18,50 @@
   align-items: center;
   width: 100%;
   margin-bottom: 1rem;
+  height:60px;
 }
 .card_name {
   font-weight: 600;
-  font-size: 1.5rem;
-  margin: 10px 0px;
+  box-decoration-break: clone;
+  font-size: 1.2rem;
+  margin: 10px 8px;
   text-decoration: none;
   color: #034078;
-  white-space: pre-wrap;
+  display: flex;
+  align-items: flex-start;
 }
 .card_icon {
   position: relative;
   display: inline-block;
 }
 .dropdown-content {
+  bottom:-60px;
+  right:-250%;
   display: none;
   position: absolute;
   background-color: #fff;
-  min-width: 160px;
+  min-width: 170px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  padding: 2px 0px 0px 15px;
   border-radius: 5px;
 }
 
-.dropdown-content-item {
+.dropdown-content-item{
   text-decoration: none;
   display: block;
   color: #034078;
   font-size: 0.85rem;
-  margin-bottom: 0.5rem;
+  font-weight:400;
+  margin-bottom: 0rem;
   padding: 2px;
   cursor: pointer;
+  padding-bottom: 8px;
+}
+.dropdown-content-item:last-child{
+  padding-bottom: 0;
+  margin-bottom: 0.5rem;
+  color:rgb(184, 32, 32);
 }
 
 .card_icon:hover .dropdown-content {
@@ -61,6 +75,7 @@
 }
 
 .card_img {
+  border-radius:5px 5px 0 0;
   background-image: url(../../images/book-library-with-open-textbook.jpg);
   background-position: center;
   background-size: cover;

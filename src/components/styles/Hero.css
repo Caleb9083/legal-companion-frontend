@@ -1,40 +1,45 @@
 .size{
   background-color: #034078 !important;
   border:none !important;
-  font-size: 32px !important;
+  font-size: 25px !important;
   display:flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   padding:10px 30px !important;
 }
 .hero_container {
-  width: 87.5%;
+  width: 83.5%;
   height: 500px;
   margin-left: 100px;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 7rem;
+  margin-bottom: 1rem;
 }
 .hero_left {
   width: 40%;
 }
 .span_elements {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;  
 }
 .hero_left span {
-  font-size: 3rem;
+  font-size: 3.4rem;
+  font-style: italic;
   display: block;
   font-weight: bold;
-  color: #034078;
+  color: transparent;
+  background-image: linear-gradient(#034078,#034078,#98b8d6);
+  background-clip: text;
+
 }
 .hero_right {
-  height:470px;
+  height:410px;
   width: 50%;
   border-radius: 50%;
   background-image:  linear-gradient(to left bottom,rgba(3, 64, 120,0.3),rgba(3, 64, 120,0.3)) ,url(../../images/high-angle-shot-gavel-lawsuit-papers-wooden-surface-min.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
+
 }
 
 .button_container {

@@ -11,15 +11,15 @@ const ChaptersPage = () => {
     const [chapters, setChapters] = useState([]);
     const [constitution, setConstitution] = useState([]);
     const { constitutionId } = useParams();
-    const [isChapterModalOpen, setIsChapterModalOpen] = useState(false)
+    const [isChapterModalOpen, setIsChapterModalOpen] = useState(false);
 
     const handleChapterShow = () => {
-        setIsChapterModalOpen(true)
-    }
+        setIsChapterModalOpen(true);
+    };
 
     const handleChapterClose = () => {
-        setIsChapterModalOpen(false)
-    }
+        setIsChapterModalOpen(false);
+    };
 
     useEffect(() => {
         let chaptersUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters`;
@@ -59,16 +59,8 @@ const ChaptersPage = () => {
                     {constitution && constitution.preamble}
                 </div>
             </div>
-            <div className="constitution_sub_section_title ">
-                <div className="chapter_head">
-                    Chapters
-                    {isChapterModalOpen && <AddChapterModal constitutionId={`${constitutionId}`} handleShow={handleChapterShow} handleClose={handleChapterClose} />}
-                    <Button className="customX_button" onClick={handleChapterShow} >
-                        <BsPlusLg style={{ marginRight: "4px", width: "0.8rem" }} />
-                        Add new chapter
-                    </Button>
-                </div>
-            </div>
+            <div className="constitution_sub_section_title ">Chapters</div>
+
             <div className="constitution_chapters">
                 {chapters &&
                     chapters.map((chapter) => {
@@ -82,6 +74,23 @@ const ChaptersPage = () => {
                             />
                         );
                     })}
+            </div>
+            <div>
+                <div className="chapter_head">
+                    {isChapterModalOpen && (
+                        <AddChapterModal
+                            constitutionId={`${constitutionId}`}
+                            handleShow={handleChapterShow}
+                            handleClose={handleChapterClose}
+                        />
+                    )}
+                </div>
+                <Button
+                    style={{ backgroundColor: "#034078" }}
+                    onClick={handleChapterShow}>
+                    <BsPlusLg style={{ marginRight: "4px", width: "0.8rem" }} />
+                    Add new chapter
+                </Button>
             </div>
             <Banner />
         </div>

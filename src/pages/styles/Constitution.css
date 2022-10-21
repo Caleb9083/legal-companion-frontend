@@ -1,88 +1,155 @@
-.constitution{
-    width: 80%;
-    margin: 0 auto;
+.constitution {
+  width: 80%;
+  margin: 0 auto;
 }
-.constitution_hero_section{
-    height: 170px;
-    width: 100%;
-    margin-bottom:50px;
+.constitution_hero_section {
+  margin-top: -30px;
+  height: 170px;
+  width: 100%;
+  margin-bottom: 80px;
 }
-.constituion_hero_text{
-    color: #034078;
-    font-size: 1.2rem;
-    margin-bottom:7px;
-    line-height:1;
+.constituion_hero_text {
+  color: #034078;
+  font-size: 1.2rem;
+  font-weight: 400;
+  /* line-height:1; */
 }
-.top{
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+.constituion_hero_text_top {
+  margin-left: -5px;
+  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: 500;
+  color: transparent;
+  margin-bottom: 0.5rem;
+  background-image: linear-gradient(#034078, #034078, #98b8d6);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
-.constitution_search{
-    height: 80px;
-    width: 100%;
+.constituion_hero_text_down {
+  /* margin-bottom: 20rem; */
+  /* background-color: red; */
 }
-.search_field_container{
-    width: 100%;
-    display: flex;
-    align-items: center;
+.constitution_search {
+  height: 80px;
+  width: 100%;
 }
-.search_input{
-    border-radius: 10px;
-    color:#034078;
-    width: 40%;
-    height: 2.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    margin-right: 2rem;
+.search_field_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
-.search_input:focus{
-        outline: none !important;
-        border:1.5px solid #034078;
-        /* box-shadow: 0 0 10px #034078; */
+.search_input {
+  border-radius: 10px;
+  color: #034078;
+  width: 40%;
+  height: 2.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  margin-right: 2rem;
 }
-.customX_button{
-    background-color: #034078 !important;
-    border:none !important;
+.search_input:focus {
+  outline: none !important;
+  border: 1.5px solid #034078;
+  /* box-shadow: 0 0 10px #034078; */
 }
-.customX_button:hover{
-    background-color: #fff !important;
-    border:none !important;
-    color: #034078 !important;
-    border:1px solid #034078 !important;
+.customX_button {
+  background-color: #034078 !important;
+  border: none !important;
 }
-
-.constitution_main{
-    width: 100%;
-    height: auto;
-}
-.constitution_main_head{
-    height: 40px;
-    width: 100%;
-    color:#034078;
-    /* box-shadow: 0 px 0 rgba(0, 0, 0, 0.2); */
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 8px -5px;
-    margin-bottom: 1rem;
-}
-
-.constitution_main_body{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+.customX_button:hover {
+  background-color: #fff !important;
+  border: none !important;
+  color: #034078 !important;
+  border: 1px solid #034078 !important;
 }
 
-.constitution_upload{
-    width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 5rem;
-    display: flex;
-    justify-content: right;
+.constitution_main {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
-.constitution_bottom{
-    width: 70%;
-    margin: 5rem auto;
-    height: 35rem;
-    background-image: url(../../images/consti.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+.constitution_main_head {
+  border-radius: 5px;
+  padding: 8px 0 0 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  height: 40px;
+  width: 100%;
+  color: white;
+  background-color: red;
+  /* background-image:linear-gradient(to left top,rgb(44, 101, 151),#034078,#5d8ebb ); */
+  background-color: #00dbde;
+  background-image: linear-gradient(90deg, #034078 0%, #6899c7 100%);
+
+  /* box-shadow: 0 px 0 rgba(0, 0, 0, 0.2); */
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 8px -5px;
+  margin-bottom: 1rem;
+}
+
+.constitution_main_body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.constitution_upload {
+  width: 100%;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: right;
+}
+.constitution_bottom {
+  width: 70%;
+  margin: 5rem auto;
+  height: 30rem;
+  display: flex;
+}
+.constitution_bottom_left {
+  background-image: url(../../images/high-angle-shot-gavel-lawsuit-papers-wooden-surface-min.jpg);
+  clip-path: polygon(0 50%, 50% 100%, 50% 0);
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 50%;
+}
+.constitution_bottom_right {
+  background-image: url(../../images/high-angle-shot-gavel-lawsuit-papers-wooden-surface-min.jpg);
+  clip-path: polygon(100% 50%, 50% 100%, 50% 0);
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 50%;
+}
+
+.background_video {
+  /* position: absolute; */
+  /* top: 0;
+    left: 0; */
+  /* z-index: 1; */
+  height: 500px;
+  width: 100%;
+  /* opacity: .15; */
+  position: relative;
+}
+.background_video_content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.foreground{
+    position:absolute;
+    z-index: 10;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background-image: linear-gradient(
+        to left top,
+        rgba(3, 64, 120, 0.5),
+        rgba(40, 99, 153, 0.6),
+        rgba(169, 198, 224, 0.7)
+      );
+      height:500px;
+      width:100%;
 }
