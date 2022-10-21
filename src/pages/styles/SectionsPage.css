@@ -1,15 +1,23 @@
 .sections_container {
-  width: 100%;
+  width: 80%;
   margin: 0 auto 7rem auto;
 }
 .sections_chapter_head {
-  width: 88%;
-  margin: 0 auto;
+  width: 100%;
 }
 .sections_chapter_title {
-  font-size: 2rem;
-  color: #034078;
+  width: 80%;
+  margin-top: -2rem;
+  font-size: 3rem;
+  font-size: 4rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  color: transparent;
   margin-bottom: 0.5rem;
+  background-image: linear-gradient(#034078, #034078, #98b8d6);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 .sections_constitution_title {
   font-size: 1.5rem;
@@ -18,8 +26,7 @@
 }
 .sections_body {
   width: 100%;
-  
 }
-.sections_add_button_container{
+.sections_add_button_container {
   float: right;
 }
