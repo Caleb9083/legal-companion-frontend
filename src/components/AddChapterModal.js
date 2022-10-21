@@ -42,9 +42,9 @@ const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
         <>
             <Modal show={handleShow} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Add a new chapter</Modal.Title>
+                    <Modal.Title style={{ color: "#034078" }}>Add a new chapter</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body style={{ color: "#034078" }}>
                     <Form onSubmit={(e) => handleSubmit(e)}>
                         <Form.Group className="mb-3">
                             <Form.Label>Chapter Name</Form.Label>
@@ -54,6 +54,7 @@ const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
                                 onChange={(e) => handleChange(e)}
                                 type="text"
                                 placeholder="Enter the name of the Chapter"
+                                required
                             />
                         </Form.Group>
 
@@ -65,9 +66,10 @@ const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
                                 onChange={(e) => handleChange(e)}
                                 as="textarea"
                                 placeholder="Enter the Description"
+                                required
                             />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button style={{ backgroundColor: "#034078", color: "#fff", border: "none" }} variant="primary" type="submit">
                             Submit
                         </Button>
                     </Form>

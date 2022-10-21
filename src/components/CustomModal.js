@@ -42,9 +42,9 @@ function CustomModal({ handleClose, handleShow }) {
         <>
             <Modal show={handleShow} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Add a new constitution</Modal.Title>
+                    <Modal.Title style={{ color: "#034078" }}>Add a new constitution</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body style={{ color: "#034078" }}>
                     <Form onSubmit={(e) => handleSubmit(e)}>
                         <Form.Group className="mb-3">
                             <Form.Label>Constitution Name</Form.Label>
@@ -54,6 +54,7 @@ function CustomModal({ handleClose, handleShow }) {
                                 onChange={(e) => handleChange(e)}
                                 type="text"
                                 placeholder="Enter the name of the Constitution"
+                                required
                             />
                         </Form.Group>
 
@@ -65,9 +66,10 @@ function CustomModal({ handleClose, handleShow }) {
                                 onChange={(e) => handleChange(e)}
                                 as="textarea"
                                 placeholder="Enter the Preamble"
+                                required
                             />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button style={{ backgroundColor: "#034078", color: "#fff", border: "none" }} variant="primary" type="submit">
                             Submit
                         </Button>
                     </Form>
