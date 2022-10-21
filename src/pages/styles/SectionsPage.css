@@ -10,8 +10,6 @@
   margin-top: -2rem;
   font-size: 3rem;
   font-size: 4rem;
-  display: flex;
-  justify-content: space-between;
   font-weight: 500;
   color: transparent;
   margin-bottom: 0.5rem;
@@ -28,5 +26,8 @@
   width: 100%;
 }
 .sections_add_button_container {
-  float: right;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
 }

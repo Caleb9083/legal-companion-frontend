@@ -2,9 +2,18 @@
   .about-section_top {
     padding: 50px;
     text-align: center;
-    background-color: #115594;
+    background-image: linear-gradient(
+      to left top,
+      rgba(3, 64, 120, 0.85),
+      rgba(40, 99, 153, 0.85),
+      rgba(169, 198, 224, 0.85)),
+      url(../../images/book-library-with-open-textbook-long.jpg)
+    ;
     color: white;
     margin-bottom: 2rem;
+    margin-top: -4rem;
+    background-size: cover;
+    background-position: center;
   }
 
   .about-section_top_contents{

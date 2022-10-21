@@ -65,19 +65,6 @@ const SectionsPage = () => {
                 <div className="sections_chapter_head">
                     <div className="sections_chapter_title">
                         {chapter && chapter.title}
-                        <div className="sections_add_button_container">
-                            <div className="sections_add_button">
-                                {isAddSectionModalOpen && (
-                                    <AddSectionModal
-                                        constitutionId={`${constitutionId}`}
-                                        chapterId={`${chapterId}`}
-                                        handleShow={handleSectionShow}
-                                        handleClose={handleSectionClose}
-                                    />
-                                )}
-                                <Button className="customX_button" onClick={handleSectionShow}>Add new section</Button>
-                            </div>
-                        </div>
                     </div>
                     <div className="sections_constitution_title">
                         {constitution && constitution.title}
@@ -97,6 +84,21 @@ const SectionsPage = () => {
                                 />
                             );
                         })}
+                </div>
+                <div className="sections_add_button_container">
+                    <div className="sections_add_button">
+                        {isAddSectionModalOpen && (
+                            <AddSectionModal
+                                constitutionId={`${constitutionId}`}
+                                chapterId={`${chapterId}`}
+                                handleShow={handleSectionShow}
+                                handleClose={handleSectionClose}
+                            />
+                        )}
+                        <Button className="customX_button" onClick={handleSectionShow}>
+                            Add new section
+                        </Button>
+                    </div>
                 </div>
             </div>
             <Banner />

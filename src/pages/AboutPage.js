@@ -3,6 +3,7 @@ import "./styles/AboutPage.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import p1 from "../images/book-library-with-open-textbook-long.jpg";
+import Banner from "../components/Banner";
 
 const AboutPage = () => {
     return (
@@ -58,6 +59,7 @@ const AboutPage = () => {
                     </Card.Body>
                 </Card>
             </div>
+            <Banner />
         </div>
     );
 };

@@ -60,13 +60,13 @@
 
 .constitution_chapters{
     width: 80%;
-    margin: 0 auto 3rem 12.5rem;
+    margin: 0 auto 2rem 12.5rem;
 }
 .chapter_add_button_container{
     display: flex;
     width: 67%;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 }
 

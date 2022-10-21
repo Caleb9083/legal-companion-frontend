@@ -30,7 +30,7 @@ const SectionCard = (props) => {
                 <div className="section_card_title_text">{props.title}</div>
                 <div className="card_icon card_icon_section">
                     <BiDotsVerticalRounded
-                        style={{ width: "30px", height: "30px", color: "#034078" }}
+                        style={{ width: "30px", height: "30px", color: "#fff" }}
                     />
                     <div className="dropdown-content section">
                         <div className="dropdown-content-item" onClick={handleUpdateSectionShow}>
