@@ -1,4 +1,4 @@
-.contact-section_top {
+.contact_section_top {
   padding: 100px;
   text-align: center;
   background-image: linear-gradient(
@@ -12,7 +12,19 @@
   background-size: cover;
   background-position: center;
 }
-.contact-section_top_contents {
+.contact_section_top_contents {
   width: 80%;
   margin: 0 auto;
+}
+.contact_section_main{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    height: 80vh;
+}
+.contact_section_main_left{
+    width: 50%
+}
+.contact_section_main_right{
+    width: 50%
 }
