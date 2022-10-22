@@ -60,8 +60,8 @@ const Navbar = () => {
                             <Link
                                 className="nav-links"
                                 onClick={closeMobileMenu}
-                                to="/services">
-                                Services
+                                to="/contact-us">
+                                Contact Us
                             </Link>
                         </li>
                     </ul>

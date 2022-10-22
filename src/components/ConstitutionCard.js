@@ -33,11 +33,7 @@ const ConstitutionCard = (props) => {
             <div className="card">
                 <div className="card_img"></div>
                 <div className="card_title_container">
-                    <div className="card_name">
-                        <Link className="card_name" to={`/constitutions/${constitutionId}`}>
-                            {`${props.title}`}
-                        </Link>
-                    </div>
+                    <div className="card_name">{props.title}</div>
 
                     <div className="card_icon">
                         <BiDotsVerticalRounded

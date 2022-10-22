@@ -5,11 +5,14 @@ import ConstitutionCard from "../components/ConstitutionCard";
 import { FaUpload } from "react-icons/fa";
 import CustomModal from "../components/CustomModal";
 import vid from "../images/background-video.mp4";
+import axios from "axios";
+import Spinner from "react-bootstrap/Spinner";
 
 const Constitution = () => {
     const [searchValue, setSearchValue] = useState("");
     const [data, setData] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleShow = () => {
         setIsModalOpen(true);
@@ -19,18 +22,23 @@ const Constitution = () => {
         setIsModalOpen(false);
     };
 
+    const getConstitutionData = async () => {
+        try {
+            const fetchData = await axios
+                .get(
+                    "https://project-legal-companion.herokuapp.com/api/v2/constitutions/"
+                )
+                .then((res) => {
+                    setData(res.data);
+                });
+            setIsLoading(true);
+        } catch (error) {
+            console.log(`Error fetching data: ${error.message}`);
+        }
+    };
+
     useEffect(() => {
-        fetch("https://project-legal-companion.herokuapp.com/api/v2/constitutions/")
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                throw res;
-            })
-            .then((jsonData) => {
-                setData(jsonData);
-            })
-            .catch((error) => console.log(`Error fetching data: ${error.message}`));
+        getConstitutionData();
     }, [data]);
 
     return (
@@ -70,14 +78,17 @@ const Constitution = () => {
                 <div className="constitution_main">
                     <div className="constitution_main_head">All Documents</div>
                     <div className="constitution_main_body">
-                        {data &&
+                        {isLoading ? (
                             data.map((el) => (
                                 <ConstitutionCard
                                     key={el._id}
                                     title={el.title}
                                     constitutionId={el._id}
                                 />
-                            ))}
+                            ))
+                        ) : (
+                            <Spinner animation="border" />
+                        )}
                     </div>
                     <div className="constitution_upload">
                         {isModalOpen && (
@@ -87,16 +98,9 @@ const Constitution = () => {
                             <FaUpload /> Upload new document
                         </Button>
                     </div>
-                    {/* <div className="constitution_bottom">
-                    <div className="constitution_bottom_left"></div>
-                    <div className="constitution_bottom_right"></div>
-                </div> */}
                 </div>
             </div>
             <div className="background_video">
-                {/* <video className="background_video_content" autoplay muted loop>
-                <source src={vid} type="video/mp4"></source>
-            </video> */}
                 <video
                     src={vid}
                     autoPlay
@@ -104,13 +108,14 @@ const Constitution = () => {
                     muted
                     className="background_video_content"
                 />
-                <div className="foreground">PMinim eu reprehenderit adipisicing deserunt officia. Cupidatat proident
-                    dolore ea labore. Laboris ut dolore tempor nisi voluptate officia
-                    officia. Cillum excepteur elit in officia nisi magna minim nisi officia
-                    eu tempor proident nulla. Do aute mollit reprehenderit elit proident qui
-                    est id consequat aliquip excepteur. Fugiat id reprehenderit id minim
-                    tempor ex ut nostrud eu et.</div>
-
+                <div className="foreground">
+                    PMinim eu reprehenderit adipisicing deserunt officia. Cupidatat
+                    proident dolore ea labore. Laboris ut dolore tempor nisi voluptate
+                    officia officia. Cillum excepteur elit in officia nisi magna minim
+                    nisi officia eu tempor proident nulla. Do aute mollit reprehenderit
+                    elit proident qui est id consequat aliquip excepteur. Fugiat id
+                    reprehenderit id minim tempor ex ut nostrud eu et.
+                </div>
             </div>
         </div>
     );
