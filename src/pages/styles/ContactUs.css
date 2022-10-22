@@ -1,0 +1,18 @@
+.contact-section_top {
+  padding: 100px;
+  text-align: center;
+  background-image: linear-gradient(
+    to left top,
+    rgba(3, 64, 120, 0.5),
+    rgba(40, 99, 153, 0.6),
+    rgba(169, 198, 224, 0.7)),url(../../images/contactus2.jpg);
+  color: white;
+  margin-bottom: 2rem;
+  margin-top: -4rem;
+  background-size: cover;
+  background-position: center;
+}
+.contact-section_top_contents {
+  width: 80%;
+  margin: 0 auto;
+}

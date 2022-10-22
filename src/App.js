@@ -8,6 +8,7 @@ import Constitution from './pages/Constitution';
 import ChaptersPage from './pages/ChaptersPage';
 import SectionsPage from './pages/SectionsPage';
 import AboutPage from './pages/AboutPage';
+import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/constitutions" element={<Constitution />} />
             <Route
               path="/constitutions/:constitutionId"
