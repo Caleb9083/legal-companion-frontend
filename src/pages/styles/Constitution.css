@@ -153,3 +153,10 @@
       height:500px;
       width:100%;
 }
+
+.foreground-text{
+  width: 80%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ccc;
+}

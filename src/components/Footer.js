@@ -23,12 +23,16 @@ const Footer = () => {
                                 Home
                             </Link>
 
-                            <Link to="#" className="some_a">Constitutions</Link>
+                            <Link to="#" className="some_a">
+                                Constitutions
+                            </Link>
 
-                            <Link to="#" className="some_a">About</Link>
-
-                            <Link to="#" className="some_a">Services</Link>
-                            <Link to="#" className="some_a">Contact</Link>
+                            <Link to="#" className="some_a">
+                                About
+                            </Link>
+                            <Link to="#" className="some_a">
+                                Contact
+                            </Link>
                         </p>
 
                         <p className="footer-company-name">Company Name © 2015</p>

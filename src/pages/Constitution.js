@@ -109,12 +109,13 @@ const Constitution = () => {
                     className="background_video_content"
                 />
                 <div className="foreground">
-                    PMinim eu reprehenderit adipisicing deserunt officia. Cupidatat
-                    proident dolore ea labore. Laboris ut dolore tempor nisi voluptate
-                    officia officia. Cillum excepteur elit in officia nisi magna minim
-                    nisi officia eu tempor proident nulla. Do aute mollit reprehenderit
-                    elit proident qui est id consequat aliquip excepteur. Fugiat id
-                    reprehenderit id minim tempor ex ut nostrud eu et.
+                    <p className="foreground-text">
+                        Laboris ut dolore tempor nisi voluptate officia officia. Cillum
+                        excepteur elit in officia nisi magna minim nisi officia eu tempor
+                        proident nulla. Do aute mollit reprehenderit elit proident qui est
+                        id consequat aliquip excepteur. Fugiat id reprehenderit id minim
+                        tempor ex ut nostrud eu et.
+                    </p>
                 </div>
             </div>
         </div>

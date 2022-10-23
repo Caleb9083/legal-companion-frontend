@@ -30,7 +30,7 @@ section {
 /* Footer left */
 
 .footer-distributed .footer-left {
-  width: 40%;
+  width: 35%;
 }
 
 /* The company logo */
@@ -118,7 +118,6 @@ section {
 }
 
 .footer-distributed .footer-links a{
-  /* content: "|"; */
   font-weight: 300;
   font-size: 15px;
   border-right:1.5px solid white;
@@ -142,7 +141,7 @@ section {
 /* Footer Right */
 
 .footer-distributed .footer-right {
-  width: 20%;
+  width: 30%;
 }
 
 .footer-distributed .footer-company-about {

@@ -14,8 +14,8 @@ const ContactUs = () => {
             </div>
             <div className="contact_section_main">
                 <div className="contact_section_main_left">
-                    <div>
-                        <p>
+                    <div className="contact_section_main_left_top">
+                        <p className="contact_section_main_left_top-text">
                             Ipsum consectetur dolore quis ex duis consequat quis non nisi
                             excepteur. Ex est nisi cillum ex culpa eu. Commodo consequat
                             aliqua aliquip esse irure. Quis tempor fugiat minim aliqua laboris
@@ -23,13 +23,13 @@ const ContactUs = () => {
                             sint id sunt ad nulla pariatur nisi.
                         </p>
                     </div>
-                    <div>
-                        <p>
+                    <div className="contact_section_main_left_bottom">
+                        <p className="contact_section_main_left_bottom-text">
                             You collaborate with strategic copywriters, developers, editors,
                             graphic designers, marketers and strategists to develop powerful
                             marketing programs that move the needle.
                         </p>
-                        <p>
+                        <p className="contact_section_main_left_bottom-text">
                             Let's discuss your marketing goals. We'd love to help you achieve
                             them.
                         </p>

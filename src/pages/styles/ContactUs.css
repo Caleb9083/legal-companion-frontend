@@ -28,3 +28,16 @@
 .contact_section_main_right{
     width: 50%
 }
+.contact_section_main_left_top{
+  margin: 20px 0 10px 0;
+}
+.contact_section_main_left_top-text{
+  font-size: 1.5rem;
+  color: #034078;
+}
+.contact_section_main_left_bottom{
+
+}
+.contact_section_main_left_bottom-text{
+
+}
