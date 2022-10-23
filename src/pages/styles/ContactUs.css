@@ -36,8 +36,9 @@
   color: #034078;
 }
 .contact_section_main_left_bottom{
-
+  margin: 10px 0;
+  color: #034078;
 }
 .contact_section_main_left_bottom-text{
-
+  font-size: 1.2rem;
 }

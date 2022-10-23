@@ -2,6 +2,7 @@ import React from "react";
 import "./styles/ContactUs.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Banner from "../components/Banner"
 
 const ContactUs = () => {
     return (
@@ -82,6 +83,9 @@ const ContactUs = () => {
                         </Form.Group>
                     </Form>
                 </div>
+            </div>
+            <div>
+                <Banner />
             </div>
         </div>
     );
