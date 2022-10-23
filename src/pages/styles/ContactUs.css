@@ -19,7 +19,7 @@
 .contact_section_main{
     display: flex;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 3rem auto;
 }
 .contact_section_main_left{
     width: 50%
