@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
 import Button from "react-bootstrap/Button";
 import AddSectionModal from "../components/AddSectionModal";
+import axios from "axios";
+import PlaceholderLoader from "../components/PlaceholderLoader";
 
 const SectionsPage = () => {
     const [sections, setSections] = useState([]);
@@ -12,6 +14,7 @@ const SectionsPage = () => {
     const [constitution, setConstitution] = useState([]);
     const { constitutionId, chapterId } = useParams();
     const [isAddSectionModalOpen, setIsAddSectionModalOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSectionShow = () => {
         setIsAddSectionModalOpen(true);
@@ -21,42 +24,31 @@ const SectionsPage = () => {
         setIsAddSectionModalOpen(false);
     };
 
+    let sectionsUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}/sections`;
+    let chapterUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}`;
+    let constitutionUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}`;
+
+    const getData = async () => {
+        try {
+            const fetchConstitutionData = await axios
+                .get(constitutionUrl)
+                .then((res) => {
+                    setConstitution(res.data);
+                });
+            const fetchChapterData = await axios.get(chapterUrl).then((res) => {
+                setChapter(res.data);
+            });
+            const fetchSectionData = await axios.get(sectionsUrl).then((res) => {
+                setSections(res.data);
+            });
+            setIsLoading(true);
+        } catch (error) {
+            console.log(`Error fetching data: ${error.message}`);
+        }
+    };
+
     useEffect(() => {
-        let sectionsUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}/sections`;
-        let chapterUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}`;
-        let constitutionUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}`;
-        fetch(sectionsUrl)
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                throw res;
-            })
-            .then((sectionData) => {
-                setSections(sectionData);
-            });
-
-        fetch(chapterUrl)
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                throw res;
-            })
-            .then((chapterData) => {
-                setChapter(chapterData);
-            });
-
-        fetch(constitutionUrl)
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                throw res;
-            })
-            .then((constitutionData) => {
-                setConstitution(constitutionData);
-            });
+        getData();
     }, [sections]);
 
     return (
@@ -64,14 +56,14 @@ const SectionsPage = () => {
             <div className="sections_container">
                 <div className="sections_chapter_head">
                     <div className="sections_chapter_title">
-                        {chapter && chapter.title}
+                        {isLoading ? (chapter.title) : (<PlaceholderLoader />)}
                     </div>
                     <div className="sections_constitution_title">
-                        {constitution && constitution.title}
+                        {isLoading ? (constitution.title) : (<PlaceholderLoader />)}
                     </div>
                 </div>
                 <div className="sections_body">
-                    {sections &&
+                    {isLoading ? (
                         sections.map((el) => {
                             return (
                                 <SectionCard
@@ -83,7 +75,10 @@ const SectionsPage = () => {
                                     sectionId={el._id}
                                 />
                             );
-                        })}
+                        })
+                    ) : (
+                        <PlaceholderLoader />
+                    )}
                 </div>
                 <div className="sections_add_button_container">
                     <div className="sections_add_button">

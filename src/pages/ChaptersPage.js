@@ -6,12 +6,15 @@ import { BsPlusLg } from "react-icons/bs";
 import ChapterCard from "../components/ChapterCard";
 import Banner from "../components/Banner";
 import AddChapterModal from "../components/AddChapterModal";
+import axios from "axios";
+import PlaceholderLoader from "../components/PlaceholderLoader";
 
 const ChaptersPage = () => {
     const [chapters, setChapters] = useState([]);
     const [constitution, setConstitution] = useState([]);
     const { constitutionId } = useParams();
     const [isChapterModalOpen, setIsChapterModalOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChapterShow = () => {
         setIsChapterModalOpen(true);
@@ -21,48 +24,45 @@ const ChaptersPage = () => {
         setIsChapterModalOpen(false);
     };
 
-    useEffect(() => {
-        let chaptersUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters`;
-        let constitutionUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}`;
-        fetch(chaptersUrl)
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                throw res;
-            })
-            .then((chapterData) => {
-                setChapters(chapterData);
-            });
+    let chaptersUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters`;
+    let constitutionUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}`;
 
-        fetch(constitutionUrl)
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                throw res;
-            })
-            .then((constitutionData) => {
-                setConstitution(constitutionData);
+    const getData = async () => {
+        try {
+            const fetchConstitutionData = await axios
+                .get(constitutionUrl)
+                .then((res) => {
+                    setConstitution(res.data);
+                });
+            const fetchChapterData = await axios.get(chaptersUrl).then((res) => {
+                setChapters(res.data);
             });
+            setIsLoading(true);
+        } catch (error) {
+            console.log(`Error fetching data: ${error.message}`);
+        }
+    };
+
+    useEffect(() => {
+        getData();
     }, [chapters]);
 
     return (
         <div className="chapters_container">
             <div className="constitution_title">
-                {constitution && constitution.title}
+                {isLoading ? (constitution.title) : (<PlaceholderLoader />)}
             </div>
 
             <div className="constitution_sub_section_title">Preamble</div>
             <div className="constitution_preamble_container">
                 <div className="constitution_preamble_body">
-                    {constitution && constitution.preamble}
+                    {isLoading ? (constitution.preamble) : (<PlaceholderLoader />)}
                 </div>
             </div>
             <div className="constitution_sub_section_title ">Chapters</div>
 
             <div className="constitution_chapters">
-                {chapters &&
+                {isLoading ? (
                     chapters.map((chapter) => {
                         return (
                             <ChapterCard
@@ -73,7 +73,10 @@ const ChaptersPage = () => {
                                 chapterId={chapter._id}
                             />
                         );
-                    })}
+                    })
+                ) : (
+                    <PlaceholderLoader />
+                )}
             </div>
             <div className="chapter_add_button_container">
                 <div className="chapter_add_button">
