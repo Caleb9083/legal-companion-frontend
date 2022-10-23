@@ -6,7 +6,7 @@ import { FaUpload } from "react-icons/fa";
 import CustomModal from "../components/CustomModal";
 import vid from "../images/background-video.mp4";
 import axios from "axios";
-import Spinner from "react-bootstrap/Spinner";
+import PlaceholderLoader from "../components/PlaceholderLoader";
 
 const Constitution = () => {
     const [searchValue, setSearchValue] = useState("");
@@ -87,7 +87,7 @@ const Constitution = () => {
                                 />
                             ))
                         ) : (
-                            <Spinner animation="border" />
+                            <PlaceholderLoader />
                         )}
                     </div>
                     <div className="constitution_upload">
