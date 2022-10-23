@@ -53,7 +53,7 @@ const ChapterCard = (props) => {
                     <div
                         className="dropdown-content-item"
                         onClick={handleUpdateChapterShow}>
-                        Edit title and description
+                        Edit title or description
                     </div>
                     <div
                         className="dropdown-content-item"

@@ -71,6 +71,7 @@ const AddSectionModal = ({
                                 value={sectionData.content}
                                 onChange={(e) => handleChange(e)}
                                 as="textarea"
+                                style={{ height: "150px" }}
                                 placeholder="Enter the content for the section"
                                 required
                             />

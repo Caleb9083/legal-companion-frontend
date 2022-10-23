@@ -76,6 +76,7 @@ const UpdateSectionModal = ({
                                 value={sectionData.content}
                                 onChange={(e) => handleChange(e)}
                                 as="textarea"
+                                style={{ height: "150px" }}
                                 placeholder="Enter the content for this section"
                             />
                         </Form.Group>

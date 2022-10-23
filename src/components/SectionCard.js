@@ -34,7 +34,7 @@ const SectionCard = (props) => {
                     />
                     <div className="dropdown-content section">
                         <div className="dropdown-content-item" onClick={handleUpdateSectionShow}>
-                            Edit title and description
+                            Edit title or content
                         </div>
                         <div className="dropdown-content-item" onClick={handleDeleteSectionShow}>
                             Delete

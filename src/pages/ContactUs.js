@@ -13,14 +13,35 @@ const ContactUs = () => {
                 </div>
             </div>
             <div className="contact_section_main">
-                <div className="contact_section_main_left"></div>
+                <div className="contact_section_main_left">
+                    <div>
+                        <p>
+                            Ipsum consectetur dolore quis ex duis consequat quis non nisi
+                            excepteur. Ex est nisi cillum ex culpa eu. Commodo consequat
+                            aliqua aliquip esse irure. Quis tempor fugiat minim aliqua laboris
+                            nulla nostrud sit et nisi dolore aliqua sint. Proident consequat
+                            sint id sunt ad nulla pariatur nisi.
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            You collaborate with strategic copywriters, developers, editors,
+                            graphic designers, marketers and strategists to develop powerful
+                            marketing programs that move the needle.
+                        </p>
+                        <p>
+                            Let's discuss your marketing goals. We'd love to help you achieve
+                            them.
+                        </p>
+                    </div>
+                </div>
                 <div className="contact_section_main_right">
                     <Form
                         style={{
                             color: "#034078",
                             boxShadow: "0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45)",
                             padding: "20px",
-                            borderRadius: "15px"
+                            borderRadius: "15px",
                         }}>
                         <Form.Group className="mb-3">
                             <Form.Label>Name</Form.Label>
