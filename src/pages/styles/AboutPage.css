@@ -7,7 +7,7 @@
       rgba(3, 64, 120, 0.85),
       rgba(40, 99, 153, 0.85),
       rgba(169, 198, 224, 0.85)),
-      url(../../images/book-library-with-open-textbook-long.jpg)
+      url(../../images/about-us.jpg)
     ;
     color: white;
     margin-bottom: 2rem;
@@ -31,9 +31,10 @@
   
  .about_card_container{
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 1rem auto;
     display: flex;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    justify-content: space-around;
 
  }
   

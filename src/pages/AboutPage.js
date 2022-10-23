@@ -10,7 +10,7 @@ const AboutPage = () => {
         <div>
             <div className="about-section_top">
                 <div className="about-section_top_contents">
-                    <h1>About Us Page</h1>
+                    <h1>About Us</h1>
                     <p>Some text about who we are and what we do.</p>
                     <p>
                         Nostrud ullamco aliquip minim cupidatat qui enim nostrud anim. Ex
@@ -23,39 +23,36 @@ const AboutPage = () => {
             </div>
             <div className="about_our_team">Our Team</div>
             <div className="about_card_container">
-                <Card style={{ width: "18rem" }}>
-                    <Card.Img style={{ height: "15rem" }} variant="top" src={p1} />
+                <Card style={{ width: "16rem" }}>
+                    <Card.Img style={{ height: "12rem" }} variant="top" src={p1} />
                     <Card.Body style={{ color: "#034078" }}>
-                        <Card.Title>Card Title</Card.Title>
+                        <Card.Title>Caleb Osam</Card.Title>
                         <Card.Text>
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                         </Card.Text>
-                        <Button className="customX_button" variant="primary">Go somewhere</Button>
                     </Card.Body>
                 </Card>
 
-                <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" style={{ height: "15rem" }} src={p1} />
+                <Card style={{ width: "16rem" }}>
+                    <Card.Img variant="top" style={{ height: "12rem" }} src={p1} />
                     <Card.Body style={{ color: "#034078" }}>
-                        <Card.Title>Card Title</Card.Title>
+                        <Card.Title>Eric Atsu</Card.Title>
                         <Card.Text >
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                         </Card.Text>
-                        <Button className="customX_button" variant="primary">Go somewhere</Button>
                     </Card.Body>
                 </Card>
 
-                <Card style={{ width: "18rem" }}>
-                    <Card.Img style={{ height: "15rem" }} variant="top" src={p1} />
+                <Card style={{ width: "16rem" }}>
+                    <Card.Img style={{ height: "12rem" }} variant="top" src={p1} />
                     <Card.Body style={{ color: "#034078" }}>
-                        <Card.Title>Card Title</Card.Title>
+                        <Card.Title>Enoch Amarteifio</Card.Title>
                         <Card.Text>
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                         </Card.Text>
-                        <Button className="customX_button" variant="primary">Go somewhere</Button>
                     </Card.Body>
                 </Card>
             </div>
