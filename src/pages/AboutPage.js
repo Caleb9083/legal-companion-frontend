@@ -1,7 +1,9 @@
 import React from "react";
 import "./styles/AboutPage.css";
 import Card from "react-bootstrap/Card";
-import p1 from "../images/book-library-with-open-textbook-long.jpg";
+import caleb from "../images/caleb_profile.jpg";
+import eric from "../images/eric_profile.jpg";
+import enoch from "../images/book-library-with-open-textbook-long.jpg";
 import Banner from "../components/Banner";
 
 const AboutPage = () => {
@@ -23,7 +25,7 @@ const AboutPage = () => {
             <div className="about_our_team">Our Team</div>
             <div className="about_card_container">
                 <Card style={{ width: "16rem" }}>
-                    <Card.Img style={{ height: "12rem" }} variant="top" src={p1} />
+                    <Card.Img style={{ height: "13rem" }} variant="top" src={caleb} />
                     <Card.Body style={{ color: "#034078" }}>
                         <Card.Title>Caleb Osam</Card.Title>
                         <Card.Text>
@@ -34,7 +36,7 @@ const AboutPage = () => {
                 </Card>
 
                 <Card style={{ width: "16rem" }}>
-                    <Card.Img variant="top" style={{ height: "12rem" }} src={p1} />
+                    <Card.Img variant="top" style={{ height: "13rem" }} src={eric} />
                     <Card.Body style={{ color: "#034078" }}>
                         <Card.Title>Eric Atsu</Card.Title>
                         <Card.Text>
@@ -45,7 +47,7 @@ const AboutPage = () => {
                 </Card>
 
                 <Card style={{ width: "16rem" }}>
-                    <Card.Img style={{ height: "12rem" }} variant="top" src={p1} />
+                    <Card.Img style={{ height: "13rem" }} variant="top" src={enoch} />
                     <Card.Body style={{ color: "#034078" }}>
                         <Card.Title>Enoch Amarteifio</Card.Title>
                         <Card.Text>
