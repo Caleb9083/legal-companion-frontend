@@ -10,13 +10,13 @@ const AboutPage = () => {
             <div className="about-section_top">
                 <div className="about-section_top_contents">
                     <h1>About Us</h1>
-                    <p>Some text about who we are and what we do.</p>
+                    <p>About who we are and what we do.</p>
                     <p>
-                        Nostrud ullamco aliquip minim cupidatat qui enim nostrud anim. Ex
-                        officia culpa enim occaecat ullamco minim commodo sit nisi id in
-                        veniam commodo irure. Sint exercitation laborum ut elit aute.
-                        Laboris aliquip eu consequat ad ad aliqua. Veniam ea incididunt
-                        commodo minim elit cillum enim aliquip aliqua veniam culpa.
+                        We are a team of final year undergraduate students pursuing computer
+                        science motivated to solve world problems. We work together to
+                        design, create and produce work that we are proud of for folks that
+                        we believe in. We are available for hire in a wide range of creative
+                        disciplines for a variety of jobs, projects and gigs.
                     </p>
                 </div>
             </div>
@@ -37,7 +37,7 @@ const AboutPage = () => {
                     <Card.Img variant="top" style={{ height: "12rem" }} src={p1} />
                     <Card.Body style={{ color: "#034078" }}>
                         <Card.Title>Eric Atsu</Card.Title>
-                        <Card.Text >
+                        <Card.Text>
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                         </Card.Text>

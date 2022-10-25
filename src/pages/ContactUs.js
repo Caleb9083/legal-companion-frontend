@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/ContactUs.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Banner from "../components/Banner"
+import Banner from "../components/Banner";
 
 const ContactUs = () => {
     return (
@@ -10,9 +10,10 @@ const ContactUs = () => {
             <div className="contact_section_top">
                 <div className="contact_section_top_contents">
                     <h1>Contact Us</h1>
-                    <p>Some text about who we are and what we do.</p>
+                    <p>Want to get in touch? We'd love to hear from you.</p>
                 </div>
             </div>
+            <div className="contact_secttion_main_head">Let's Start a Conversation</div>
             <div className="contact_section_main">
                 <div className="contact_section_main_left">
                     <div className="contact_section_main_left_top">

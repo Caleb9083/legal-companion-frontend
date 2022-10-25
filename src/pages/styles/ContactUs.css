@@ -16,6 +16,13 @@
   width: 80%;
   margin: 0 auto;
 }
+.contact_secttion_main_head{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #034078;
+  margin-bottom: 1rem;
+}
 .contact_section_main{
     display: flex;
     width: 80%;
@@ -28,7 +35,7 @@
     width: 50%
 }
 .contact_section_main_left_top{
-  margin: 20px 0 10px 0;
+  margin: 0px 0 10px 0;
 }
 .contact_section_main_left_top-text{
   font-size: 1.5rem;
