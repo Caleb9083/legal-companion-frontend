@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Navbar.css";
+import { UserContext } from "../context/userContext";
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
@@ -8,6 +9,8 @@ const Navbar = () => {
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
+
+    const { isLoggedIn } = useContext(UserContext);
 
     const showButton = () => {
         if (window.innerWidth <= 960) {
@@ -61,25 +64,30 @@ const Navbar = () => {
                                 Contact Us
                             </Link>
                         </li>
-                        {/* </ul>
-                    <ul className="signUp"> */}
-                        <li className="nav-item">
-                            <Link
-                                className="nav-links"
-                                onClick={closeMobileMenu}
-                                to="/auth">
-                                Sign in
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link
-                                className="nav-links"
-                                onClick={closeMobileMenu}
-                                to="/auth">
-                                Sign Up
-                            </Link>
-                        </li>
                     </ul>
+                    {isLoggedIn ? (
+                        <div></div>
+                    ) : (
+                        <div className="nav-right">
+                            <li className="nav-item">
+                                <Link
+                                    className="nav-links"
+                                    onClick={closeMobileMenu}
+                                    to="/auth">
+                                    Sign in
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link
+                                    className="nav-links"
+                                    onClick={closeMobileMenu}
+                                    to="/auth">
+                                    Sign Up
+                                </Link>
+                            </li>
+                        </div>
+                    )}
+
                     {button}
                 </div>
             </nav>

@@ -40,15 +40,14 @@
 }
 
 .nav-menu {
-  display: grid;
-  grid-template-columns: repeat(6, auto);
-  grid-gap: 10px;
+  display: flex;
   list-style: none;
   text-align: center;
-  width: 60vw;
-  justify-content: end;
-  margin-top:10px;
-  margin-right: 2rem;
+  width: 45vw;
+  justify-content: center;
+  margin-top:20px;
+  margin-right: 3rem;
+  align-items: center;
 }
 
 .nav-item {
@@ -85,6 +84,10 @@
 }
 .signUp{
   list-style-type: none;
+}
+.nav-right{
+  display: flex;
+  list-style: none;
 }
 @media screen and (max-width: 1024px){
   .navbar-logo {
