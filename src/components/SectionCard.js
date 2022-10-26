@@ -11,7 +11,7 @@ const SectionCard = (props) => {
         useState(false);
     const [isDeleteSectionModalOpen, setIsDeleteSectionModalOpen] =
         useState(false);
-    const { isLoggedIn } = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     const handleUpdateSectionShow = () => {
         setIsUpdateSectionModalOpen(true);
@@ -32,7 +32,7 @@ const SectionCard = (props) => {
         <div className="section_card_container">
             <div className="section_card_title">
                 <div className="section_card_title_text">{props.title}</div>
-                {isLoggedIn && (
+                {user.isLoggedIn && (
                     <div className="card_icon card_icon_section">
                         <BiDotsVerticalRounded
                             style={{ width: "30px", height: "30px", color: "#fff" }}

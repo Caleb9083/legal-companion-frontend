@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useMemo } from "react";
 
 export const UserContext = createContext({
     name: "",
@@ -6,20 +6,17 @@ export const UserContext = createContext({
     isLoggedIn: false
 });
 
-const User = ({ children }) => {
-    const [user, setUser] = useState({
-        name: "",
-        email: "",
-        isLoggedIn: false
-    });
+// const User = ({ children }) => {
+//     const [user, setUser] = useState({
+//         name: "",
+//         email: "",
+//         isLoggedIn: false
+//     });
 
-    let value = {
-        user,
-        setUser,
-    };
+//     let value = useMemo(() => ({ user, setUser }), [user, setUser])
 
-    return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
-};
+//     return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+// };
 
 
-export default User;
+// export default User;

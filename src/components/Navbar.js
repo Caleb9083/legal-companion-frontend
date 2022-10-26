@@ -10,7 +10,7 @@ const Navbar = () => {
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
-    const { isLoggedIn } = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
 
     const showButton = () => {
         if (window.innerWidth <= 960) {
@@ -20,6 +20,13 @@ const Navbar = () => {
         }
     };
 
+    const handleLogout = () => {
+        setUser({
+            name: "",
+            email: "",
+            isLoggedIn: false,
+        });
+    };
     useEffect(() => {
         showButton();
     }, []);
@@ -65,8 +72,17 @@ const Navbar = () => {
                             </Link>
                         </li>
                     </ul>
-                    {isLoggedIn ? (
-                        <div></div>
+                    {user.isLoggedIn ? (
+                        <div className="nav-right">
+                            <li className="nav-item">
+                                <Link className="nav-links">{user.name}</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-links" onClick={handleLogout}>
+                                    Logout
+                                </Link>
+                            </li>
+                        </div>
                     ) : (
                         <div className="nav-right">
                             <li className="nav-item">

@@ -16,7 +16,7 @@ const SectionsPage = () => {
     const { constitutionId, chapterId } = useParams();
     const [isAddSectionModalOpen, setIsAddSectionModalOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const { isLoggedIn } = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     const handleSectionShow = () => {
         setIsAddSectionModalOpen(true);
@@ -82,7 +82,7 @@ const SectionsPage = () => {
                         <PlaceholderLoader />
                     )}
                 </div>
-                {isLoggedIn && (
+                {user.isLoggedIn && (
                     <div className="sections_add_button_container">
                         <div className="sections_add_button">
                             {isAddSectionModalOpen && (

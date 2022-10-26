@@ -16,7 +16,7 @@ const ChaptersPage = () => {
     const { constitutionId } = useParams();
     const [isChapterModalOpen, setIsChapterModalOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const { isLoggedIn } = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     const handleChapterShow = () => {
         setIsChapterModalOpen(true);
@@ -80,7 +80,7 @@ const ChaptersPage = () => {
                     <PlaceholderLoader />
                 )}
             </div>
-            {isLoggedIn && (
+            {user.isLoggedIn && (
                 <div className="chapter_add_button_container">
                     <div className="chapter_add_button">
                         {isChapterModalOpen && (

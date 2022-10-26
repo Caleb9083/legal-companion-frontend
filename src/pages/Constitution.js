@@ -15,9 +15,9 @@ const Constitution = () => {
     const [data, setData] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const { isLoggedIn } = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
 
-    console.log("re rendering ");
+    console.log(user.isLoggedIn);
     const handleShow = () => {
         setIsModalOpen(true);
     };
@@ -98,7 +98,7 @@ const Constitution = () => {
                         {isModalOpen && (
                             <CustomModal handleShow={handleShow} handleClose={handleClose} />
                         )}
-                        {isLoggedIn && (
+                        {user.isLoggedIn && (
                             <Button className="customX_button" onClick={handleShow}>
                                 <FaUpload /> Upload new document
                             </Button>

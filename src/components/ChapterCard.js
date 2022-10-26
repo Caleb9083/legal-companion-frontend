@@ -8,7 +8,7 @@ import UpdateChapterModal from "./UpdateChapterModal";
 import { UserContext } from "../context/userContext";
 
 const ChapterCard = (props) => {
-    const { isLoggedIn } = useContext(UserContext);
+    const { user } = useContext(UserContext);
     const { constitutionId, chapterId } = props;
     const [isUpdateChapterModalOpen, setIsUpdateChapterModalOpen] =
         useState(false);
@@ -48,7 +48,7 @@ const ChapterCard = (props) => {
                 </div>
             </Link>
 
-            {isLoggedIn && (
+            {user.isLoggedIn && (
                 <>
                     <BiDotsVerticalRounded
                         style={{ width: "30px", height: "30px", color: "#034078" }}

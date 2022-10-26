@@ -8,7 +8,7 @@ import UpdateConstitutionModal from "./UpdateConstitutionModal";
 import { UserContext } from "../context/userContext";
 
 const ConstitutionCard = (props) => {
-    const { isLoggedIn } = useContext(UserContext);
+    const { user } = useContext(UserContext);
     const { constitutionId } = props;
 
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
@@ -37,40 +37,40 @@ const ConstitutionCard = (props) => {
                 <div className="card_title_container">
                     <div className="card_name">{props.title}</div>
 
-                    {
-                        isLoggedIn && (
-                            <div className="card_icon">
-                                <BiDotsVerticalRounded
-                                    style={{ width: "30px", height: "30px", color: "#034078" }}
-                                />
-                                <div className="dropdown-content">
-
-                                    <div className="dropdown-content-item" onClick={handleUpdateShow}>
-                                        Edit name or preamble
-                                    </div>
-                                    <div className="dropdown-content-item" onClick={handleDeleteShow}>
-                                        Delete
-                                    </div>
-                                    {isUpdateModalOpen && (
-                                        <UpdateConstitutionModal
-                                            handleShow={handleUpdateShow}
-                                            handleClose={handleUpdateClose}
-                                            constitutionId={`${constitutionId}`}
-                                        />
-                                    )}
-
-                                    {isDeleteModalOpen && (
-                                        <DeleteConstitutionModal
-                                            handleShow={handleDeleteShow}
-                                            handleClose={handleDeleteClose}
-                                            constitutionId={`${constitutionId}`}
-                                        />
-                                    )}
+                    {user.isLoggedIn && (
+                        <div className="card_icon">
+                            <BiDotsVerticalRounded
+                                style={{ width: "30px", height: "30px", color: "#034078" }}
+                            />
+                            <div className="dropdown-content">
+                                <div
+                                    className="dropdown-content-item"
+                                    onClick={handleUpdateShow}>
+                                    Edit name or preamble
                                 </div>
-                            </div>
-                        )
-                    }
+                                <div
+                                    className="dropdown-content-item"
+                                    onClick={handleDeleteShow}>
+                                    Delete
+                                </div>
+                                {isUpdateModalOpen && (
+                                    <UpdateConstitutionModal
+                                        handleShow={handleUpdateShow}
+                                        handleClose={handleUpdateClose}
+                                        constitutionId={`${constitutionId}`}
+                                    />
+                                )}
 
+                                {isDeleteModalOpen && (
+                                    <DeleteConstitutionModal
+                                        handleShow={handleDeleteShow}
+                                        handleClose={handleDeleteClose}
+                                        constitutionId={`${constitutionId}`}
+                                    />
+                                )}
+                            </div>
+                        </div>
+                    )}
                 </div>
                 <div className="card_open_container">
                     <Link to={`/constitutions/${constitutionId}`}>
