@@ -7,13 +7,17 @@ import CustomModal from "../components/CustomModal";
 import vid from "../images/background-video.mp4";
 import axios from "axios";
 import PlaceholderLoader from "../components/PlaceholderLoader";
+import { useContext } from "react";
+import { UserContext } from "../context/userContext";
 
 const Constitution = () => {
     const [searchValue, setSearchValue] = useState("");
     const [data, setData] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const { isLoggedIn } = useContext(UserContext);
 
+    console.log("re rendering ");
     const handleShow = () => {
         setIsModalOpen(true);
     };
@@ -39,7 +43,7 @@ const Constitution = () => {
 
     useEffect(() => {
         getConstitutionData();
-    }, [data]);
+    }, []);
 
     return (
         <div>
@@ -94,9 +98,11 @@ const Constitution = () => {
                         {isModalOpen && (
                             <CustomModal handleShow={handleShow} handleClose={handleClose} />
                         )}
-                        <Button className="customX_button" onClick={handleShow}>
-                            <FaUpload /> Upload new document
-                        </Button>
+                        {isLoggedIn && (
+                            <Button className="customX_button" onClick={handleShow}>
+                                <FaUpload /> Upload new document
+                            </Button>
+                        )}
                     </div>
                 </div>
             </div>

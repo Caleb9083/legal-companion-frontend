@@ -9,7 +9,8 @@ import ChaptersPage from './pages/ChaptersPage';
 import SectionsPage from './pages/SectionsPage';
 import AboutPage from './pages/AboutPage';
 import ContactUs from './pages/ContactUs';
-import LoginPage from './pages/LoginPage';
+import Auth from './pages/Auth';
+
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact-us" element={<ContactUs />} />
-            <Route path="/login-signup" element={<LoginPage />} />
+            <Route path="/auth" element={<Auth />} />
             <Route path="/constitutions" element={<Constitution />} />
             <Route
               path="/constitutions/:constitutionId"
