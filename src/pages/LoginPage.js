@@ -27,7 +27,7 @@ const LoginPage = () => {
         e.preventDefault();
 
         const { data } = await axios
-            .post("http://localhost:5000/api/v2/auth/signin", {
+            .post("https://project-legal-companion.herokuapp.com/api/v2/auth/signin", {
                 ...loginData,
             })
         // .then((res) => {

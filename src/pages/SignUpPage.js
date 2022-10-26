@@ -26,7 +26,7 @@ const SignUpPage = () => {
         e.preventDefault();
         const { password, confirmPassword } = signUpData
         if (password === confirmPassword) {
-            axios.post("http://localhost:5000/api/v2/auth/signup", {
+            axios.post("https://project-legal-companion.herokuapp.com/api/v2/auth/signup", {
                 ...signUpData
             }).then((res) => {
                 console.log(res.data)
