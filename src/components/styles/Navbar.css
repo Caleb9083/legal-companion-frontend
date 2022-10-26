@@ -41,7 +41,7 @@
 
 .nav-menu {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(6, auto);
   grid-gap: 10px;
   list-style: none;
   text-align: center;
@@ -82,6 +82,9 @@
 
 .menu-icon {
   display: none;
+}
+.signUp{
+  list-style-type: none;
 }
 @media screen and (max-width: 1024px){
   .navbar-logo {

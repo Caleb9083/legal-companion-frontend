@@ -1,0 +1,21 @@
+.login_container{
+    display: flex;
+    margin: 0 auto 3rem auto;
+    width: 80%;
+    justify-content: space-between;
+}
+.login_login_container{
+    width: 40%;
+}
+.login_signup_container{
+    width: 40%;
+}
+.login_top_text{
+    color: #034078;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+.top_text_large{
+    font-size: 2rem;
+    font-weight: bold;
+}
