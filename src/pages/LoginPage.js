@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -32,14 +32,6 @@ const LoginPage = () => {
         ...loginData,
       }
     );
-    // .then((res) => {
-
-    //     toast.success("Signed Up successfully");
-    //     setLoginData({
-    //         email: "",
-    //         password: "",
-    //     });
-    // });
 
     if (data.status === "success") {
       toast.success("Successfully Logged In");
@@ -61,7 +53,7 @@ const LoginPage = () => {
         <p>Sign in with your email and password</p>
       </div>
       <Form onSubmit={(e) => handleSubmit(e)} style={{ color: "#034078" }}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3">
           <Form.Label>Email address</Form.Label>
           <Form.Control
             name="email"
@@ -77,7 +69,7 @@ const LoginPage = () => {
           </Form.Text>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3">
           <Form.Label>Password</Form.Label>
           <Form.Control
             name="password"

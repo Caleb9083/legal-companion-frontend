@@ -51,11 +51,11 @@ const SignUpPage = () => {
                 <p>Sign up with your email and password</p>
             </div>
             <Form onSubmit={(e) => handleSubmit(e)} style={{ color: "#034078" }}>
-                <Form.Group className="mb-3" controlId="formBasicUsername">
+                <Form.Group className="mb-3">
                     <Form.Label>Username</Form.Label>
                     <Form.Control name="name" value={name} onChange={(e) => { handleChange(e) }} type="text" placeholder="Enter username" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control name="email" value={email} onChange={(e) => { handleChange(e) }} type="email" placeholder="Enter email" />
                     <Form.Text className="text-muted">
@@ -63,12 +63,12 @@ const SignUpPage = () => {
                     </Form.Text>
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3">
                     <Form.Label>Password</Form.Label>
                     <Form.Control name="password" value={password} onChange={(e) => handleChange(e)} type="password" placeholder="Password" />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3">
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control name="confirmPassword" value={confirmPassword} onChange={(e) => { handleChange(e) }} type="password" placeholder="Password" />
                 </Form.Group>
