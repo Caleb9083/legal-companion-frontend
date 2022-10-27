@@ -19,3 +19,12 @@
     font-size: 2rem;
     font-weight: bold;
 }
+
+@media screen and (max-width: 1024px) {
+    .login_login_container{
+        width: 45%;
+    }
+    .login_signup_container{
+        width: 45%;
+    }
+}
