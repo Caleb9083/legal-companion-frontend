@@ -2,8 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Navbar.css";
 import { UserContext } from "../context/userContext";
+import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -26,6 +29,7 @@ const Navbar = () => {
             email: "",
             isLoggedIn: false,
         });
+        navigate("/");
     };
     useEffect(() => {
         showButton();
@@ -75,11 +79,18 @@ const Navbar = () => {
                     {user.isLoggedIn ? (
                         <div className="nav-right">
                             <li className="nav-item">
-                                <Link className="nav-links">{user.name}</Link>
+                                <Link className="nav-links-right-user">{user.name}</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-links" onClick={handleLogout}>
-                                    Logout
+                                <Link className="nav-links-right" onClick={handleLogout}>
+                                    <Button
+                                        style={{
+                                            backgroundColor: "#034078",
+                                            color: "#fff",
+                                            border: "none",
+                                        }}>
+                                        Logout
+                                    </Button>
                                 </Link>
                             </li>
                         </div>
@@ -87,18 +98,32 @@ const Navbar = () => {
                         <div className="nav-right">
                             <li className="nav-item">
                                 <Link
-                                    className="nav-links"
+                                    className="nav-links-right"
                                     onClick={closeMobileMenu}
                                     to="/auth">
-                                    Sign in
+                                    <Button
+                                        style={{
+                                            backgroundColor: "#034078",
+                                            color: "#fff",
+                                            border: "none",
+                                        }}>
+                                        Sign in
+                                    </Button>
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className="nav-links"
+                                    className="nav-links-right"
                                     onClick={closeMobileMenu}
                                     to="/auth">
-                                    Sign Up
+                                    <Button
+                                        style={{
+                                            backgroundColor: "#5aa6ed",
+                                            color: "#fff",
+                                            border: "none",
+                                        }}>
+                                        Sign Up
+                                    </Button>
                                 </Link>
                             </li>
                         </div>
