@@ -89,7 +89,7 @@
 .constitution_main_body {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  gap: 1rem;
 }
 
 .constitution_upload {
