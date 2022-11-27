@@ -9,6 +9,7 @@ import AddChapterModal from "../components/AddChapterModal";
 import axios from "axios";
 import PlaceholderLoader from "../components/PlaceholderLoader";
 import { UserContext } from "../context/userContext";
+import { BASE_URL } from "../url";
 
 const ChaptersPage = () => {
     const [chapters, setChapters] = useState([]);
@@ -26,8 +27,8 @@ const ChaptersPage = () => {
         setIsChapterModalOpen(false);
     };
 
-    let chaptersUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters`;
-    let constitutionUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}`;
+    let chaptersUrl = `${BASE_URL}/api/v2/constitutions/${constitutionId}/chapters`;
+    let constitutionUrl = `${BASE_URL}/api/v2/constitutions/${constitutionId}`;
 
     const getData = async () => {
         try {

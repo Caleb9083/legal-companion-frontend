@@ -8,6 +8,7 @@ import AddSectionModal from "../components/AddSectionModal";
 import axios from "axios";
 import PlaceholderLoader from "../components/PlaceholderLoader";
 import { UserContext } from "../context/userContext";
+import { BASE_URL } from "../url";
 
 const SectionsPage = () => {
     const [sections, setSections] = useState([]);
@@ -26,9 +27,9 @@ const SectionsPage = () => {
         setIsAddSectionModalOpen(false);
     };
 
-    let sectionsUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}/sections`;
-    let chapterUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}`;
-    let constitutionUrl = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}`;
+    let sectionsUrl = `${BASE_URL}/api/v2/constitutions/${constitutionId}/chapters/${chapterId}/sections`;
+    let chapterUrl = `${BASE_URL}/api/v2/constitutions/${constitutionId}/chapters/${chapterId}`;
+    let constitutionUrl = `${BASE_URL}/api/v2/constitutions/${constitutionId}`;
 
     const getData = async () => {
         try {
