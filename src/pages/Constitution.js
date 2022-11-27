@@ -43,7 +43,7 @@ const Constitution = () => {
 
     useEffect(() => {
         getConstitutionData();
-    }, []);
+    }, [data]);
 
     return (
         <div>
