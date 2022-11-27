@@ -4,10 +4,11 @@ import Form from "react-bootstrap/Form";
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { BASE_URL } from "../url";
 
 function CustomModal({ handleClose, handleShow }) {
     const url =
-        "https://project-legal-companion.herokuapp.com/api/v2/constitutions/";
+        `${BASE_URL}/api/v2/constitutions/`;
     const [constitutionData, setConstitutionData] = useState({
         name: "",
         preamble: "",

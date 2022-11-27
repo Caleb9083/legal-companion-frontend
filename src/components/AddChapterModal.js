@@ -4,9 +4,10 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { BASE_URL } from "../url";
 
 const AddChapterModal = ({ handleClose, handleShow, constitutionId }) => {
-    const url = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters`;
+    const url = `${BASE_URL}/api/v2/constitutions/${constitutionId}/chapters`;
     const [chapterData, setChapterData] = useState({
         constitution: constitutionId,
         name: "",

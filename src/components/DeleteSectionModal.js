@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { BASE_URL } from "../url";
 
 const DeleteSectionModal = ({
     handleClose,
@@ -11,7 +12,7 @@ const DeleteSectionModal = ({
     chapterId,
     sectionId,
 }) => {
-    const url = `https://project-legal-companion.herokuapp.com/api/v2/constitutions/${constitutionId}/chapters/${chapterId}/sections/${sectionId}`;
+    const url = `${BASE_URL}/api/v2/constitutions/${constitutionId}/chapters/${chapterId}/sections/${sectionId}`;
     const handleOk = () => {
         axios
             .delete(url)

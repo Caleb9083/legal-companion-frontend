@@ -1,0 +1,1 @@
+export const BASE_URL = `https://project-legal-companion.herokuapp.com`;
