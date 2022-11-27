@@ -1,7 +1,7 @@
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { BASE_URL } from "../url";
@@ -13,6 +13,7 @@ function CustomModal({ handleClose, handleShow }) {
         name: "",
         preamble: "",
     });
+
 
     const handleChange = (e) => {
         const newConstitution = { ...constitutionData };
