@@ -6,6 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { UserContext } from "../context/userContext";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../url";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     const { data } = await axios.post(
-      "https://project-legal-companion.herokuapp.com/api/v2/auth/signin",
+      `${BASE_URL}/api/v2/auth/signin`,
       {
         ...loginData,
       }

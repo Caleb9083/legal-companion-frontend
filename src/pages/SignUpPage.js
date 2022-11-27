@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { BASE_URL } from "../url";
 
 const SignUpPage = () => {
 
@@ -26,7 +27,7 @@ const SignUpPage = () => {
         e.preventDefault();
         const { password, confirmPassword } = signUpData
         if (password === confirmPassword) {
-            axios.post("https://project-legal-companion.herokuapp.com/api/v2/auth/signup", {
+            axios.post(`${BASE_URL}/api/v2/auth/signup`, {
                 ...signUpData
             }).then((res) => {
                 console.log(res.data)
