@@ -19,7 +19,6 @@ const Constitution = () => {
     const [isLoading, setIsLoading] = useState(false);
     const { user, setUser } = useContext(UserContext);
 
-    console.log(user.isLoggedIn);
     const handleShow = () => {
         setIsModalOpen(true);
     };

@@ -30,7 +30,6 @@ const SignUpPage = () => {
             axios.post(`${BASE_URL}/api/v2/auth/signup`, {
                 ...signUpData
             }).then((res) => {
-                console.log(res.data)
                 toast.success("Signed Up successfully")
                 setSignUpData({
                     name: "",
