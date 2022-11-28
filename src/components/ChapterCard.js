@@ -50,10 +50,10 @@ const ChapterCard = (props) => {
 
             {user.isLoggedIn && (
                 <>
-                    <BiDotsVerticalRounded
-                        style={{ width: "30px", height: "30px", color: "#034078" }}
-                    />
                     <div className="card_icon chapter_card_icon">
+                        <BiDotsVerticalRounded
+                            style={{ width: "30px", height: "30px", color: "#034078" }}
+                        />
                         <div className="dropdown-content">
                             <div
                                 className="dropdown-content-item"
