@@ -38,12 +38,13 @@ const LoginPage = () => {
       toast.success("Successfully Logged In");
       setUser({
         isLoggedIn: true,
-        email: data.data.user[0].email,
-        name: data.data.user[0].name,
+        email: data.data.user.email,
+        name: data.data.user.name,
+        token: data.token
       });
       navigate("/");
     } else {
-      toast.error("Wrong Username or Password");
+      toast.error(`${data.message}`);
     }
   };
 

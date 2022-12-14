@@ -18,6 +18,7 @@ function App() {
   const [user, setUser] = useState({
     name: "",
     email: "",
+    token: "",
     isLoggedIn: false,
   });
 
