@@ -29,15 +29,15 @@ function CustomModal({ handleClose, handleShow }) {
                 preamble: constitutionData.preamble,
             })
             .then((res) => {
-                handleClose();
-                toast.success("Constitution created successfully");
-                console.log(res.data);
+                if (res.data.status === "success") {
+                    handleClose();
+                    toast.success("Constitution created successfully");
+                } else {
+                    handleClose();
+                    toast.error(`${res.data.message}`);
+                }
             })
-            .catch((err) => {
-                handleClose();
-                toast.error("Constitution not created!, Try again.");
-                console.log(err.message);
-            });
+
     };
 
     return (
