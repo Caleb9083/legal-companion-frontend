@@ -24,23 +24,28 @@ const SignUpPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post(`${BASE_URL}/api/v2/auth/signup`, {
-        ...signUpData,
-      })
-      .then((res) => {
-        if (res.data.status === "success") {
-          toast.success("Signed Up successfully");
-          setSignUpData({
-            name: "",
-            email: "",
-            password: "",
-            passwordConfirm: "",
-          });
-        } else {
-          toast.error(`${res.data.message}`);
-        }
-      });
+    const { password, passwordConfirm } = signUpData;
+    if (password === passwordConfirm) {
+      axios
+        .post(`${BASE_URL}/api/v2/auth/signup`, {
+          ...signUpData,
+        })
+        .then((res) => {
+          if (res.data.status === "success") {
+            toast.success("Signed Up successfully");
+            setSignUpData({
+              name: "",
+              email: "",
+              password: "",
+              passwordConfirm: "",
+            });
+          } else {
+            toast.error(`${res.data.message}`);
+          }
+        });
+    } else {
+      toast.error("Passwords do not match");
+    }
   };
   return (
     <div className="login_signup_container">
