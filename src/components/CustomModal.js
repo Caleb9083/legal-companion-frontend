@@ -46,7 +46,6 @@ function CustomModal({ handleClose, handleShow }) {
           toast.error(`${res.data.message}`);
         }
       });
-    console.log(user);
   };
 
   return (

@@ -27,12 +27,9 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { data } = await axios.post(
-      `${BASE_URL}/api/v2/auth/signin`,
-      {
-        ...loginData,
-      }
-    );
+    const { data } = await axios.post(`${BASE_URL}/api/v2/auth/signin`, {
+      ...loginData,
+    });
 
     if (data.status === "success") {
       toast.success("Successfully Logged In");
@@ -40,8 +37,9 @@ const LoginPage = () => {
         isLoggedIn: true,
         email: data.data.user.email,
         name: data.data.user.name,
-        token: data.token
+        token: data.token,
       });
+
       navigate("/");
     } else {
       toast.error(`${data.message}`);
@@ -88,7 +86,8 @@ const LoginPage = () => {
             border: "none",
           }}
           variant="primary"
-          type="submit">
+          type="submit"
+        >
           Sign in
         </Button>
       </Form>
