@@ -23,7 +23,6 @@ const DeleteConstitutionModal = ({
         },
       })
       .then((res) => {
-        console.log(res.data);
         if (res.data.status === "success") {
           handleClose();
           toast.success("Constitution deleted successfully");
