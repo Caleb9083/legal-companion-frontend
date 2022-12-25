@@ -22,13 +22,13 @@ const UpdateChapterModal = ({
   });
 
   useEffect(() => {
-    axios.get(url).then((res) =>
+    axios.get(url).then((res) => {
       setChapterData({
-        title: res.data.title,
-        description: res.data.description,
-      })
-    );
-  }, []);
+        title: res.data.chapter.title,
+        description: res.data.chapter.description,
+      });
+    });
+  });
 
   const handleChange = (e) => {
     const newChapter = { ...chapterData };
@@ -90,6 +90,7 @@ const UpdateChapterModal = ({
                 value={chapterData.description}
                 onChange={(e) => handleChange(e)}
                 as="textarea"
+                style={{ height: "80px" }}
                 placeholder="Enter the description"
               />
             </Form.Group>
