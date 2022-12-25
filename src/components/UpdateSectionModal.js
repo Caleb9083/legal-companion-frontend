@@ -25,11 +25,11 @@ const UpdateSectionModal = ({
   useEffect(() => {
     axios.get(url).then((res) =>
       setSectionData({
-        title: res.data.title,
-        content: res.data.content,
+        title: res.data.section.title,
+        content: res.data.section.content,
       })
     );
-  }, []);
+  });
 
   const handleChange = (e) => {
     const newSection = { ...sectionData };
