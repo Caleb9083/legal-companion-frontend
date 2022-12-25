@@ -21,13 +21,13 @@ const UpdateConstitutionModal = ({
   });
 
   useEffect(() => {
-    axios.get(url).then((res) =>
+    axios.get(url).then((res) => {
       setConstitutionData({
         name: res.data.title,
         preamble: res.data.preamble,
-      })
-    );
-  }, []);
+      });
+    });
+  });
 
   const handleChange = (e) => {
     const newConstitution = { ...constitutionData };
@@ -89,6 +89,7 @@ const UpdateConstitutionModal = ({
                 value={constitutionData.preamble}
                 onChange={(e) => handleChange(e)}
                 as="textarea"
+                style={{ height: "150px" }}
                 placeholder="Enter the Preamble"
               />
             </Form.Group>
