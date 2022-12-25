@@ -15,6 +15,7 @@ const LoginPage = () => {
     email: "",
     password: "",
   });
+  const [hasLoaded, setHasLoaded] = useState(true);
 
   const handleChange = (e) => {
     const newLoginData = { ...loginData };
@@ -26,10 +27,12 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setHasLoaded(false);
 
     const { data } = await axios.post(`${BASE_URL}/api/v2/auth/signin`, {
       ...loginData,
     });
+    if (data.status) setHasLoaded(true);
 
     if (data.status === "success") {
       toast.success("Successfully Logged In");
@@ -88,7 +91,12 @@ const LoginPage = () => {
           variant="primary"
           type="submit"
         >
-          Sign in
+          Sign in{" "}
+          <div className={hasLoaded ? "" : "lds-facebook"}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </Button>
       </Form>
     </div>
